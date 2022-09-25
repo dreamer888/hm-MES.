@@ -1,0 +1,1529 @@
+﻿<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>华夏MES系统</title>
+<script type="text/javascript" src="js/jquery.js"></script>
+<link rel="stylesheet" href="css/comon0.css">
+</head>
+<body>
+<div class="loading">
+  <div class="loadbox"> <img src="images/loading.gif"> 页面加载中... </div>
+</div>
+<div class="head" >
+  <div  style="display:inline;">  <h1>磁阻旋转变压器自动生产线看板</h1>  </div>
+  <div class=""  id="orderCode" style="display:inline; float:left;font-size: .2rem; width: 25%; margin-left:.8rem;">
+	
+
+	<form >
+		<input type="text"  name="orderCode"  id="orderCodeTxt" class="input" onblur="lostFocus()"  onchange="onchangeInput()" autocomplete = "off"  >
+	
+		<span><input type="submit"   value="加载订单" class="loadBtn"   onclick="loadOrderOnce()">  </span>
+	</form>
+
+  
+ </div>
+
+   <div   id="showTime" style="display:inline; float:right;font-size: .2rem;  margin-right: 1.5rem ;">     </div>
+</div>
+<div class="mainbox">
+  <ul class="clearfix">
+    <li>
+      <div class="boxall" style="height:calc(33.3333% - .25rem)">
+        <div class="tit01">一周不良品统计</div>
+		  <div class="boxnav nav01" id="badProductChart"></div>
+        <div class="boxfoot"></div>
+      </div>
+	
+	
+	  <div  style="height:calc(33.3333% - .25rem); margin-bottom: .25rem;">
+	  	<div class="boxall" style="height: 100%; width:calc(50% - .08rem); float: left;">
+        	<div class="tit01">关键工序</div>
+ 			<div class="boxnav nav01" id="flowChart"></div>
+        	<div class="boxfoot"></div>
+      	</div>
+			
+	    <div class="boxall" style="height: 100%; width:calc(50% - .08rem); float: right;">
+        	<div class="tit01">当日生产率评估</div>
+			<div class="boxnav nav01"  >
+ 			
+				<div class=" p4"  style=" margin-top: 5%;" ><i id="dailyFinishColor" class="dot dot2"></i> 实际完成率  <span class="p4" id="dailyFinishRate">0  </span> </div>
+				<div class=" p4"  style=" margin-top: 5%;" ><i class="dot dot3"></i> 期望完成率  <span class="p4" id="dailyFinishRateExcept">0 </span> </div>
+				
+
+				<div class="p4" style="margin-top: 5%;" > <i id="realPieceTimeColor" class="dot dot1"  ></i> <span> 单件耗时 </span>   <span id="realPieceTime"> 32    </span>  </div>
+				<div class=" p4"  style=" margin-top: 5%;" ><i class="dot dot3"></i> 标定耗时  <span class="p4" id="realPieceTimeStandard">30 </span> </div>
+			</div>
+
+        	<div class="boxfoot"></div>
+      	</div>		
+	  
+	</div>
+	
+		
+      <div class="boxall" style="height:calc(33.3333% - .25rem)">
+        <div class="tit01">一周产量均差</div>
+         <div class="boxnav nav01" id="echart3"></div>
+        <div class="boxfoot"></div>
+      </div>
+    </li>
+
+    <li>
+      
+
+	<div  style="height:calc(33.3333% - .25rem); margin-bottom: .25rem;">
+
+		<div class="boxall" style="height: 100%; width:calc(50% - .08rem); float: left;">
+		   <div style="height: 100%; width:calc(50% - .08rem); float: right;vertical-align: middle;">  
+				<div class="tit01"  >订单总体进度</div>
+
+				<div class=" p4"  style="margin-top: 10%;" > 总体计划  <span class="p4" id="planQty">3000  </span> </div>
+
+				<div class="p4" > <span> 已经生产 </span>   <span id="makedQty"> 100    </span>  </div>
+
+				<div class="p4"> 不良品 <span  id="badQty"> 2 </span>  </div>
+				<div class="p4"> 完成率  <span  id="orderFinishRate"> 20  </span> </div>
+					    
+	   		</div>
+
+			   <div style="height: 100%; width:calc(50% - .08rem); float: left;">  
+				<!--	<div class="tit01">模块标题21</div>  -->
+				
+					<div class=""  id="pieMaked"    style="float:left; height: 100%; width: 100%; margin:0,0,0,0" >
+					</div>		
+					   
+			   </div>
+			  
+			
+			<div class="boxfoot"></div>
+		</div>
+
+		  
+	    <div class="boxall" style="height: 100%; width:calc(50% - 0.08rem); float: right;">
+
+			<div style="height: 100%; width:calc(50% - .08rem); float: right;">  
+				<div class="tit01"> 订单今日进度</div>
+
+				<div class=" p4"  style="margin-top: 10%;" > 今日计划  <span class="p4" id="planQtyDaily">1000  </span> </div>
+
+				<div class="p4" > <span> 已经生产 </span>   <span id="makedQtyDaily"> 100    </span>  </div>
+
+				<div class="p4"> 不良品 <span  id="badQtyDaily"> 2 </span>  </div>
+				<div class="p4"> 一次性通过率  <span  id="passRateDaily"> 10  </span> </div>
+					    
+	   		</div>
+
+			   <div style="height: 100%; width:calc(50% - .08rem); float: left;">  
+				<!--	<div class="tit01">模块标题21</div>  -->
+				
+					<div class=""  id="pieMakedDaily"    style="float:left; height: 100%; width: 100%; margin:0,0,0,0" >
+					</div>		
+					   
+			   </div>
+			
+			 <div class="boxfoot"></div>
+		 </div>
+ 
+				 
+	</div>
+ 
+	
+
+    
+		<div class="boxall"  style="height:calc(66.666666% - .25rem)">
+        <div class="tit03">近期生产计划列表</div>
+			 <div class="boxnav nav03">
+				 
+				 <div class="listhead listhead1">
+				  	  <span>订单号</span>
+					  <span>计划数量</span>
+					  <span>计划开始时间</span>
+					  <span>计划结束时间</span>
+					  <span>订单状态</span>
+					  <span>完成率</span>
+				 </div>
+				 <div class="listnav listnav1 scrollDiv">
+				 <ul  id="orderPlanList">
+
+					
+                    <!--
+					 <li> <span>HME2022070101</span> <span>1000</span> <span>2022-07-06 12:12:12</span> <span>2022-07-06 12:12:12</span> <span>创建</span> <span class="text-green">100%</span></li>
+					 <li><span>HME2022070602</span> <span>2000</span> <span>2022-07-06 12:12:12</span> <span>2022-07-06 12:12:12</span> <span>创建</span> <span class="text-green">100%</span></li>
+					 <li> <span>HME2022070603</span> <span>3000</span> <span>2022-07-06 12:12:12</span> <span>2022-07-06 12:12:12</span> <span>进行中</span> <span class="text-green">80%</span></li>
+					 <li> <span>HME2022070604</span> <span>4000</span> <span>2022-07-06 12:12:12</span> <span>2022-07-06 12:12:12</span> <span>创建</span> <span class="text-green">100%</span></li>
+					 <li> <span>HME2022070605</span> <span>5000</span> <span>2022-07-06 12:12:12</span> <span>2022-07-06 12:12:12</span> <span>进行中</span> <span class="text-green">70%</span></li>
+					 <li> <span>HME2022070606</span> <span>6000</span> <span>2022-07-06 12:12:12</span> <span>2022-07-06 12:12:12</span> <span>进行中</span> <span class="text-green">100%</span></li>
+					 <li> <span>HME2022070607</span> <span>7000</span> <span>2022-07-06 12:12:12</span> <span>2022-07-06 12:12:12</span> <span>进行中</span> <span class="text-green">100%</span></li>
+					  <li> <span>HME2022070602</span> <span>6000</span> <span>2022-07-06 12:12:12</span> <span>2022-07-06 12:12:12</span> <span class="text-red">终结</span> <span class="text-green">100%</span></li>
+					  <li> <span>HME2022070603</span> <span>4000</span> <span>2022-07-06 12:12:12</span> <span>2022-07-06 12:12:12</span> <span>完成</span> <span class="text-green">100%</span></li>
+					-->
+
+					 </ul>
+				 </div>
+				 
+			
+			</div>
+        <div class="boxfoot"></div>
+      </div>
+    </li>
+
+
+    <li>
+
+
+		<div  style="height:calc(33.3333% - .25rem); margin-bottom: .25rem;">
+	
+			  
+		  <div class="boxall" style="height: 100%; width:calc(50% - .08rem); float: left;">
+			  <div class="tit01">当前班组</div>
+			  <div class="boxnav nav01"  > 
+				<div class=" p4"  style=" margin-top: 5%;" ><i id="groupNamexx" class=""></i> 名称  <span class="p4" id="groupName">磁阻2线1班  </span> </div>
+				  <div class=" p4"  style=" margin-top: 5%;" ><i id="groupCountxx" class=""></i> 人数  <span class="p4" id="groupCount">  3 </span> </div>
+				  <div class=" p4"  style=" margin-top: 5%;" ><i class=""></i> 负责人  <span class="p4" id="groupLeader"> 赵荻 </span> </div>
+				  <div class="p4" style="margin-top: 5%;" > <i id="groupContactxx" class=""  ></i> <span> 电话 </span>   <span id="groupContact">   18665802636  </span>  </div>
+			
+			  </div>
+  
+			  <div class="boxfoot"></div>
+			</div>	
+			
+			
+			<div class="boxall" style="height: 100%; width:calc(50% - .08rem); float: right;">
+				<div class="tit01"  id="exceptionListTitle">异常列表</div>
+  
+			  
+			   
+			   <div class="listnav listnav4 scrollDiv">
+							
+					  <ul class="yclb"  id="exceptionList">
+						  <!--li  >  <span  style="text-align: left;"  >exception 1 </span> </li>
+						  <li  >  <span  style="text-align: left;"  >Exception  2</span> </li-->
+	   
+					  </ul>
+				 </div>
+  
+				<div class="boxfoot"></div>
+			  </div>
+		  
+		
+	  </div>
+	  
+  
+	  <div class="boxall"  style="height:calc(66.666666% - .25rem);   padding: 0;">
+
+      <!--div class="boxall"   style="height:calc(100% - .25rem); padding: 0;"-->
+        <div class="tit04">最近生产产品列表</div>
+ 		<div class="boxnav nav04">
+	 
+	  	<div class="listhead listhead2">        
+				  	<span>产品编码</span>
+					  <span>产品品质</span>
+					  <span>生产时间</span>
+					 
+	  	</div>
+	 
+		  <div class="listnav listnav2 scrollDiv">
+						  
+		   <ul class="smjl"  id="productList">
+
+			<!--
+			<li>               
+				<span>HME202207040001</span>
+				<span class="text-green">正常</span>
+				<span> <input type="hidden" name="countDown" value="2019/09/10 13:29:12"> <span></span></span>
+			</li>
+			
+			
+			<li>               
+				<span>HME202207040002</span>
+				<span class="text-red">异常</span>
+				<span> <input type="hidden" name="countDown" value="1 13:29:12"> <span></span></span>
+			</li>
+			<li>               
+				<span>HME202207040003</span>
+				<span class="text-green">正常</span>
+				<span> <input type="hidden" name="countDown" value="2019/09/10 13:29:12"> <span></span></span>
+			</li>
+			<li>               
+				<span>HME202207040004</span>
+				<span class="text-green">正常</span>
+				<span> <input type="hidden" name="countDown" value="2019/09/10 13:29:12"> <span></span></span>
+			</li>
+			<li>               
+				<span>HME202207040005</span>
+				<span class="text-green">正常</span>
+				<span> <input type="hidden" name="countDown" value="2019/09/10 13:29:12"> <span></span></span>
+			</li>
+			
+			
+			<li>               
+				<span>HME202207040006</span>
+				<span class="text-red">异常</span>
+				<span><span> <input type="hidden" name="countDown" value="2019/10/30 3:23:00"> <span></span></span></span>
+			</li>			  
+						
+			<li>               
+				<span>HME202207040007</span>
+				<span class="text-green">正常</span>
+				<span> <input type="hidden" name="countDown" value="2019/09/10 13:29:12"> <span></span></span>
+			</li>
+							  	<li>               
+				<span>HME202207040008</span>
+				<span class="text-green">正常</span>
+				<span> <input type="hidden" name="countDown" value="2019/09/10 13:29:16"> <span></span></span>
+			</li>
+							  	<li>               
+				<span>HME202207040009</span>
+				<span class="text-green">正常</span>
+				<span> <input type="hidden" name="countDown" value="2019/09/10 13:29:12"> <span></span></span>
+			</li>
+							  	<li>               
+				<span>HME202207040010</span>
+				<span class="text-green">正常</span>
+				<span> <input type="hidden" name="countDown" value="2019/09/10 13:29:12"> <span></span></span>
+			</li>
+							  	<li>               
+				<span>HME202207040011</span>
+				<span class="text-green">正常</span>
+				<span> <input type="hidden" name="countDown" value="2019/09/10 13:29:22"> <span></span></span>
+			</li>
+							  	<li>               
+				<span>HME202207040012</span>
+				<span class="text-green">正常</span>
+				<span> <input type="hidden" name="countDown" value="2019/09/10 13:29:42"> <span></span></span>
+			</li>
+							  	<li>               
+				<span>HME202207040013</span>
+				<span class="text-green">正常</span>
+				<span> <input type="hidden" name="countDown" value="2019/09/10 13:29:19"> <span></span></span>
+			</li>
+			<li>               
+				<span>HME202207040014</span>
+				<span class="text-green">正常</span>
+				<span> <input type="hidden" name="countDown" value="2019/09/10 13:29:17"> <span></span></span>
+			</li>
+							  
+			<li>               
+				<span>HME202207040015</span>
+				<span class="text-green">正常</span>
+				<span> <input type="hidden" name="countDown" value="2019/09/10 13:29:17"> <span></span></span>
+			</li>
+			<li>               
+				<span>HME202207040016</span>
+				<span class="text-green">正常</span>
+				<span> <input type="hidden" name="countDown" value="2019/09/10 13:29:17"> <span></span></span>
+			</li>
+			<li>               
+				<span>HME202207040017</span>
+				<span class="text-green">正常</span>
+				<span> <input type="hidden" name="countDown" value="2019/09/10 13:29:17"> <span></span></span>
+			</li>
+			<li>               
+				<span>HME202207040018</span>
+				<span class="text-green">正常</span>
+				<span> <input type="hidden" name="countDown" value="2019/09/10 13:29:17"> <span></span></span>
+			</li>
+			
+			-->
+			</ul>
+		   </div>
+		  </div>
+        <div class="boxfoot"></div>
+      </div>
+
+    </li>
+
+  </ul>
+</div>
+
+
+<script type="text/javascript" src="js/echarts.min.js"></script> 
+<script src="js/jquery.liMarquee.js"></script> 
+<script language="JavaScript" src="js/js.js"></script> 
+<script type="text/javascript" src="js/jquery.countup.min.js"></script> 
+<script type="text/javascript" src="js/jquery.waypoints.min.js"></script> 
+<script type="text/javascript">
+$('.counter').countUp();
+
+$(function(){
+	$('.scrollDiv').liMarquee({
+		direction: 'up',//身上滚动 
+		runshort: true,//内容不足时不滚动
+		scrollamount: 20//速度
+	});
+});
+
+</script> 
+ 
+  <script src="js/countDown.js"></script>
+<script type="text/javascript">
+
+
+
+    $("input[name='countDown']").each(function () {
+        var time_end=this.value;
+        var con=$(this).next("span");
+        var _=this.dataset;
+        countDown(con,{
+            time_end:time_end//开始时间
+        })
+        //提供3个事件分别为:启动,重启,停止
+        .on("countDownStarted countDownRestarted  countDownEnded ",function (arguments) {
+            console.info(arguments);
+        });
+    });
+
+
+	var t = null;
+    t = setTimeout(showTime, 1000);//開始运行
+    function showTime() {
+            clearTimeout(t);//清除定时器
+            dt = new Date();
+            var y = dt.getFullYear();
+            var mt = dt.getMonth() + 1;
+            var day = dt.getDate();
+            var h = dt.getHours();//获取时
+            var m = dt.getMinutes();//获取分
+            var s = dt.getSeconds();//获取秒
+            document.getElementById("showTime").innerHTML = y + "年" + mt + "月" + day+ "日"  + "-" + h + "时" + m + "分" + s + "秒";
+            t = setTimeout(showTime, 1000); //设定定时器，循环运行
+    }
+
+
+</script>
+
+
+
+<script type="text/javascript">
+
+  function  testWindow() 
+  {
+	var str = "document.body.clientWidth="+document.body.clientWidth+"\n";
+	str = str + "document.body.clientHeight="+document.body.clientHeight+"\n";
+	str = str + "document.body.offsetWidth="+document.body.offsetWidth+"\n";
+	str = str + "document.body.offsetHeight="+document.body.offsetHeight+"\n";
+	str = str + "document.body.scrollWidth="+document.body.scrollWidth+"\n";
+	str = str + "document.body.scrollHeight="+document.body.scrollHeight+"\n";
+	str = str + "document.body.scrollTop="+document.body.scrollTop+"\n";
+	str = str + "document.body.scrollLeft="+document.body.scrollLeft+"\n";
+	str = str + "window.screenTop="+window.screenTop+"\n";
+	str = str + "window.screenLeft="+window.screenLeft+"\n";
+	str = str + "window.screen.height="+window.screen.height+"\n";
+	str = str + "window.screen.width="+window.screen.width+"\n";
+	str = str + "window.screen.availHeight="+window.screen.availHeight+"\n";
+	str = str + "window.screen.availWidth="+window.screen.availWidth;
+	alert(str);
+  }
+
+  //testWindow();
+
+	</script>
+
+
+<script  type="text/javascript">
+
+	window.productFlag=false;
+
+	if(window.productFlag)    window.baseurl= "http://127.0.0.1:8081"; 
+  	else window.baseurl = "http://47.240.54.105:8081";
+
+	//window.baseurl= "http://47.240.54.105:8081"; 
+
+	
+ $(document).ready(function () {
+        var vw = $(window).width()
+        $("html").css({fontSize: vw / 20})
+        $(window).resize(function () {
+            var vw = $(window).width()
+            $("html").css({fontSize: vw / 20})
+        });
+
+		
+      //alert("default fontSize="+vw/20  +",vw="+vw); //,vw=1536   ,font=76.8
+	  //alert("window.screen.width="+window.screen.width);     //1536px 
+	  //alert ("rem="+ $(window).width()/76.8);    // rem=20
+
+	  $.ajax({
+                    type: "get",
+					url: window.baseurl+"/digitization/plan/GetCurrentOrderCode",
+                    dataType: "json",
+					//async:true,
+                    success: function (res) {
+					   if(res.data)
+					   {
+						 orderCodeTxt = res.data;
+						 document.getElementById("orderCodeTxt").value=orderCodeTxt;
+						window.orderCodeTxt= orderCodeTxt;
+						
+					   }						   					  
+                    },
+                    error: function (err) {
+						alert('error='+ JSON.stringify(err));
+                    }
+        });
+	
+		
+		setTimeout(GetCurrentGroup,  2000);
+
+		
+    });
+
+
+
+	
+window.onload = function () {
+
+	var orderCodeTxt ="";
+	   
+		if( window.productFlag)  {
+
+			getOderPlanList();
+			setInterval(getOrderApi,10000);
+			setInterval(getProductList,10000);
+			//setInterval(recentProductAvgDiffList,1000*60*60);//一小时
+			setInterval(recentProductAvgDiffList,4000);
+
+			setInterval(recentBadProductList,10000);
+
+			setInterval(getExceptionList,3000);
+
+			
+			//setInterval(flushFinishRate,5000); //刷新完成率
+		
+		}
+		else  {
+			
+			getOderPlanList();
+			getDemoApi();
+			setInterval(flushProductAvgDiffList,4000);
+			
+			setInterval(getProductList,5000);
+
+			setInterval(getExceptionList,3000);
+			//setInterval(getProductListDEmo,10000);		
+			
+		}
+
+		//setInterval(flushEffective,1000);
+		
+			
+	
+		//alert('html.style.fontSize='+ document.getElementById("echart222").style.fontSize);
+		//document.getElementById("echart222").style.fontSize='20px';
+		//alert('echart222.style.fontSize='+ document.getElementById("echart24").style.fontSize);  //15.2 
+		//多数浏览器的默认字体大小均为16px多数浏览器的默认字体大小均为16px
+
+
+
+		/*
+		var orderCodeTxt =localStorage.getItem("orderCodeTxt");
+		var planQty=localStorage.getItem("planQty");
+		var planQtyDaily=localStorage.getItem("planQtyDaily");
+		//var dailyFinishRateExcept= localStorage.getItem("dailyFinishRateExcept");
+		var realPieceTimeStandard= localStorage.getItem("realPieceTimeStandard");
+
+
+		
+		 if(!( (typeof(orderCodeTxt) == "undefined" )  ||  (orderCodeTxt==null )))
+		 {
+			document.getElementById("orderCodeTxt").value=orderCodeTxt;
+			
+			document.getElementById("planQty").innerHTML=planQty;
+			document.getElementById("planQtyDaily").innerHTML=planQtyDaily;
+
+			//document.getElementById("dailyFinishRateExcept").innerHTML=dailyFinishRateExcept;
+			document.getElementById("realPieceTimeStandard").innerHTML=realPieceTimeStandard + "秒";
+
+			window.orderCodeTxt =orderCodeTxt;
+			
+		 }
+		 */
+
+
+		
+
+}
+
+
+	
+	//var  t=null;
+    function getDemoApi() {
+		//clearTimeout(t);
+
+        $.ajax({
+			url: window.baseurl+'/digitization/plan/getActualProcess',
+            type: 'get',
+            dataType: 'json',
+            success: function (data) {
+				//alert('data='+ data.data);
+				//document.getElementById("planQty").innerHTML = data.data ;
+				document.getElementById("orderFinishRate").innerHTML = data.data +"%";
+				document.getElementById("badQty").innerHTML = data.data ;
+				document.getElementById("makedQty").innerHTML = data.data ;
+
+
+				//document.getElementById("planQtyDaily").innerHTML = data.data ;
+				document.getElementById("makedQtyDaily").innerHTML = data.data ;
+				document.getElementById("badQtyDaily").innerHTML = data.data ;
+				document.getElementById("passRateDaily").innerHTML = data.data +"%";
+
+				document.getElementById("dailyFinishRate").innerHTML = data.data +"%";
+				document.getElementById("dailyFinishRateExcept").innerHTML = data.data +"%";
+				document.getElementById("realPieceTime").innerHTML = data.data +"秒";
+				//document.getElementById("realPieceTimeStandard").innerHTML = data.data +"秒";
+				
+				 
+        //刷新数据
+        		var chart = echarts.getInstanceByDom(document.getElementById('pieMaked'));
+        		var option = chart.getOption();
+				
+     　　		var listDat=[{name: '已生产',value: data.data},{name: '待生产',value: 120-data.data}];
+
+        		//option.series[0].data = [{name: '已生产',value: data.data},{name: '待生产',value: 60-data.data}];;
+				option.series[0].data = listDat;
+
+        		chart.setOption(option);		
+
+				///////////////////////pieMakedDaily////////////////
+				 chart = echarts.getInstanceByDom(document.getElementById('pieMakedDaily'));
+        		 option = chart.getOption();
+				
+     　　		listDat=[{name: '已生产',value: data.data},{name: '待生产',value: 60-data.data}];
+
+        		//option.series[0].data = [{name: '已生产',value: data.data},{name: '待生产',value: 60-data.data}];;
+				option.series[0].data = listDat;
+
+        		chart.setOption(option);	
+				
+				
+				//////////////////////////
+				
+				flushEffectiveDemo(data.data);
+				flushBadProduct(data);
+			
+				//flushFlowChart(data);
+
+            
+            },
+			error:function(xhr,errorText,errorType){
+				//alert(errorText +",errorType="+errorType);
+				//has been blocked by CORS policy: No 'Access-Control-Allow-Origin' header is present on the requested resource.
+
+			}
+        });
+
+		setTimeout(getDemoApi,1*1000);
+    }
+
+
+	
+
+	function getOrderApi ()
+	{
+		//alert (" getProductApi-sorderCodeTxt= "+window.orderCodeTxt);
+		$.ajax({
+                    type: "post",
+					url:   window.baseurl+"/digitization/plan/loadOrder",
+					data: JSON.stringify({ "orderCode": window.orderCodeTxt}),
+                    contentType :"application/json",
+                    dataType: "json",
+					async:true,
+                    success: function (res) {
+                       //alert( JSON.stringify(res));
+					  
+					   if(res.data.spOrder.orderCode)
+					   {
+				
+					 	  	document.getElementById("planQty").innerHTML = res.data.spOrder.planQty ;
+							document.getElementById("orderFinishRate").innerHTML = res.data.spOrder.finishRate +"%"; ////!!!
+							document.getElementById("badQty").innerHTML = res.data.spOrder.badQty ;
+							document.getElementById("makedQty").innerHTML = res.data.spOrder.makedQty ;
+
+
+							document.getElementById("planQtyDaily").innerHTML = res.data.spDailyPlan.planQty ;
+							document.getElementById("makedQtyDaily").innerHTML = res.data.spDailyPlan.makedQty ;
+							document.getElementById("badQtyDaily").innerHTML = res.data.spDailyPlan.badQty ;
+							document.getElementById("passRateDaily").innerHTML = res.data.spDailyPlan.passRate +"%";
+
+							document.getElementById("dailyFinishRate").innerHTML = res.data.spDailyPlan.finishRate+"%";
+							document.getElementById("dailyFinishRateExcept").innerHTML = res.data.spDailyPlan.expectFinishRate +"%";///???
+							document.getElementById("realPieceTime").innerHTML = res.data.spDailyPlan.realPieceTime +"秒";
+							document.getElementById("realPieceTimeStandard").innerHTML = res.data.spDailyPlan.pieceTime+"秒";
+
+				 //刷新饼图数据
+				var chart = echarts.getInstanceByDom(document.getElementById('pieMaked'));
+        		var option = chart.getOption();
+				
+     　　		var listDat=[{name: '已生产',value:res.data.spOrder.finishRate},{name: '待生产',value: 100-res.data.spOrder.finishRate}];
+
+        		//option.series[0].data = [{name: '已生产',value: data.data},{name: '待生产',value: 60-data.data}];;
+				option.series[0].data = listDat;
+
+        		chart.setOption(option);		
+
+				///////////////////////pieMakedDaily////////////////
+				 chart = echarts.getInstanceByDom(document.getElementById('pieMakedDaily'));
+        		 option = chart.getOption();
+				
+     　　		listDat=[{name: '已生产',value: res.data.spDailyPlan.finishRate},{name: '待生产',value: 100-res.data.spDailyPlan.finishRate}];
+
+        		//option.series[0].data = [{name: '已生产',value: data.data},{name: '待生产',value: 60-data.data}];;
+				option.series[0].data = listDat;
+
+        		chart.setOption(option);	
+
+				//flushEffective(res.data.spDailyPlan.realPieceTime);
+				flushEffective(res.data.spDailyPlan);
+
+
+				} 
+										  
+                    },
+                    error: function (err) {
+						alert( JSON.stringify(err));
+                    }
+                });
+
+
+	}
+
+
+
+pieMaked();
+pieMakedDaily();
+
+//enterfullscreen();
+
+
+
+var  listFlowData= [
+[50, 50, 50, 50,50, 98],
+[50, 50, 50, 50,98, 50],
+[50, 50, 50, 98,50, 50],
+[50, 50, 98, 50,50, 50],
+[50, 98, 50, 50,50, 50],
+[98, 50, 50, 50,50, 50],	
+];
+var  count =0;
+var tFlow = null;
+tFlow = setTimeout(flushFlowChart, 1000);//開始运行
+
+function flushFlowChart() {
+	
+
+	    clearTimeout(tFlow);//清除定时器
+
+		var chart = echarts.getInstanceByDom(document.getElementById('flowChart'));
+		
+			var option = chart.getOption();
+			
+ 　　		//var listDat=[10,5,8,3,6,4];
+			 var listDat=listFlowData[count]; //[60, 33, 10, 50, 80, 98];
+			 count=(count+1)%6;
+			//option.series[0].data = [{name: '已生产',value: data.data},{name: '待生产',value: 60-data.data}];;
+			option.series[0].data[0].value = listDat;
+
+			chart.setOption(option);	
+			//alert("count="+count+ "list="+option.series[0].data);
+			
+			if(window.productFlag)
+				tFlow = setTimeout(flushFlowChart, 10000);
+			else 
+				tFlow = setTimeout(flushFlowChart, 3000);
+
+}
+
+
+
+var  listProductData= [
+
+[30, 0, -20, 10,-15, 40],
+[-30, 20, 10, 20,-15, 20],
+[0, -10, 10, 30,0, -10],
+[5, -15, 15, 25,0, -15],
+[20, -20, 10, 20,-15, 20],
+[0, 10, -10, 20, -15, 10]	
+];
+var  countP =0;
+//var tProduct = null;
+//tProduct = setTimeout(flushProductChart, 1000);//開始运行
+
+function flushProductAvgDiffList() {
+	
+
+	    //clearTimeout(tProduct);//清除定时器
+
+		var chart = echarts.getInstanceByDom(document.getElementById('echart3'));
+		
+			var option = chart.getOption();
+			
+ 　　		//var listDat=[10,5,8,3,6,4];
+			 var listDat=listProductData[countP]; //[60, 33, 10, 50, 80, 98];
+			 countP=(countP+1)%6;
+			//option.series[0].data = [{name: '已生产',value: data.data},{name: '待生产',value: 60-data.data}];;
+			option.series[0].data = listDat;
+
+			chart.setOption(option);	
+			//alert("count="+count+ "list="+option.series[0].data);
+			
+			//tProduct = setTimeout(flushProductChart, 4000);
+
+}
+
+
+//
+////
+var  colorFlag =0;
+var tColor = null;
+var  standard=30;
+
+var vite =1;
+//var data=10;
+
+if( !window.productFlag )
+	tColor = setTimeout( "flushEffectiveDemo("+data+")" ,1000 );
+else 
+	tColor = setTimeout( "flushEffective("+data+")" ,1000 );
+
+function flushEffectiveDemo(data){  
+
+	clearTimeout(tColor);//清除定时器
+	//alert("data="+data);
+
+	if(colorFlag==0)
+	{
+
+		if(data> (standard+vite))
+		{
+			document.getElementById('realPieceTimeColor').className='dot dot1';//red
+		}
+		else if(data< (standard-vite))  {
+			document.getElementById('realPieceTimeColor').className='dot dot4';   //yellow
+		}
+		else 
+		{
+			document.getElementById('realPieceTimeColor').className='dot dot2';   //green
+		}
+
+		
+		if(data< standard)
+		{
+			document.getElementById('dailyFinishColor').className='dot dot1';//red
+		}
+		else if(data> standard)  {
+			document.getElementById('dailyFinishColor').className='dot dot4';   //yellow
+		}
+		else 
+		{
+			document.getElementById('dailyFinishColor').className='dot dot2';   //green
+			
+		}
+		
+
+	}
+	else
+	{
+		document.getElementById('realPieceTimeColor').className='dot dot3'; // 无色 
+		document.getElementById('dailyFinishColor').className='dot dot3';   
+	}
+
+	colorFlag= (colorFlag+1)%2;
+
+	tColor = setTimeout("flushEffectiveDemo("+data+")", 1000);
+}
+
+
+
+
+////(res.data.spDailyPlan
+function flushEffective(data){
+
+	standard=localStorage.getItem("realPieceTimeStandard") ;
+	clearTimeout(tColor);//清除定时器
+	//alert("data="+data.realPieceTime  +"standard+vite="+standard);
+
+	if(colorFlag==0)
+	{
+ 
+		if(data.realPieceTime> standard)
+		{
+			document.getElementById('realPieceTimeColor').className='dot dot1';//red
+		}
+		else if(data.realPieceTime< standard)  {
+			document.getElementById('realPieceTimeColor').className='dot dot4';   //yellow
+		}
+		else 
+		{
+			document.getElementById('realPieceTimeColor').className='dot dot2';   //green
+		}
+
+
+		//////////////
+		if(data.finishRate< (data.expectFinishRate+vite))
+		{
+			document.getElementById('dailyFinishColor').className='dot dot1';//red
+		}
+		else if(data.finishRate> (data.expectFinishRate-vite))  {
+			document.getElementById('dailyFinishColor').className='dot dot4';   //yellow
+		}
+		else 
+		{
+			document.getElementById('dailyFinishColor').className='dot dot2';   //green
+		}
+		
+	}
+	else
+	{
+		document.getElementById('realPieceTimeColor').className='dot dot3';
+		document.getElementById('dailyFinishColor').className='dot dot3';
+	}
+
+	colorFlag= (colorFlag+1)%2;
+
+	tColor = setTimeout("flushEffective("+data+")", 1000);
+
+}
+
+
+
+
+function flushBadProduct(data) {
+
+				var chart = echarts.getInstanceByDom(document.getElementById('badProductChart'));
+        		var option = chart.getOption();
+				
+     　　		//var listDat=[10,5,8,3,6,4];
+	 			var listDat=[data.data%10,data.data%+3,data.data%10+8,data.data%10+2,data.data%10+6,data.data%10+13];
+
+        		//option.series[0].data = [{name: '已生产',value: data.data},{name: '待生产',value: 60-data.data}];;
+				option.series[0].data = listDat;
+
+        		chart.setOption(option);		
+
+}
+
+function pieMaked() {
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('pieMaked'));
+        option = {
+
+            title: [{
+                text: '订单总体计划',
+				top: 0,
+                left: 'center',
+				show: false,
+                textStyle: {
+                    color: '#fff',
+                    fontSize: '14'
+                }
+
+            }],
+            tooltip: {
+                trigger: 'item',
+                //formatter: "{a} <br/>{b}: {c} ({d}%)",
+				formatter: "{a} <br/>{b}: {d}%",
+                position: function (p) {   //其中p为当前鼠标的位置
+                    return [p[0] + 10, p[1] - 10];
+                }
+            },
+            legend: {    //上面的小方块和文字
+				show: false,
+                top: '99%',
+                itemWidth: 10,
+                itemHeight: 10,
+                data: ['总体已生产', '未生产'],
+                textStyle: {
+                    color: 'rgba(255,255,255,.5)',
+                    fontSize: '14',
+                }
+            },
+            series: [
+                {
+                    name: '订单总计划',
+                    type: 'pie',
+                    center: ['50%', '36%'],
+                    radius: ['40%', '60%'],
+                    //color: ['#065aab', '#066eab', '#0682ab', '#0696ab', '#06a0ab', '#06b4ab', '#06c8ab', '#06dcab', '#06f0ab'],
+					color: ['#00ea37', '#066eab', '#0682ab', '#0696ab', '#06a0ab', '#06b4ab', '#06c8ab', '#06dcab', '#06f0ab'],
+                    label: {show: true,
+						position: 'center'},
+                    labelLine: {show: false},
+                    data: [
+                        {name: '已生产',value: 10},
+                        {name: '待生产',value: 90}
+                       
+                    ]
+                }
+            ]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+        window.addEventListener("resize", function () {
+            myChart.resize();
+        });
+
+		
+    }
+   
+
+	function pieMakedDaily() {
+        // 基于准备好的dom，初始化echarts实例
+        var myChart = echarts.init(document.getElementById('pieMakedDaily'));
+        option = {
+
+            title: [{
+                text: '订单总体计划',
+				top: 0,
+                left: 'center',
+				show: false,
+                textStyle: {
+                    color: '#fff',
+                    fontSize: '14'
+                }
+
+            }],
+            tooltip: {
+                trigger: 'item',
+                formatter: "{a} <br/>{b}: {d}%",
+				// formatter: "{a} <br/>{b}: {c} ({d}%)",
+                position: function (p) {   //其中p为当前鼠标的位置
+                    return [p[0] + 10, p[1] - 10];
+                }
+            },
+            legend: {    //上面的小方块和文字
+				show: false,
+                top: '99%',
+                itemWidth: 10,
+                itemHeight: 10,
+                data: ['总体已生产', '未生产'],
+                textStyle: {
+                    color: 'rgba(255,255,255,.5)',
+                    fontSize: '14',
+                }
+            },
+            series: [
+                {
+                    name: '订单总计划',
+                    type: 'pie',
+                    center: ['50%', '36%'],
+                    radius: ['40%', '60%'],
+                    //color: ['#065aab', '#066eab', '#0682ab', '#0696ab', '#06a0ab', '#06b4ab', '#06c8ab', '#06dcab', '#06f0ab'],
+					color: ['#00ea37', '#066eab', '#0682ab', '#0696ab', '#06a0ab', '#06b4ab', '#06c8ab', '#06dcab', '#06f0ab'],
+                    label: {show: true,
+						position: 'center'},
+                    labelLine: {show: false},
+                    data: [
+                        {name: '已生产',value: 10},
+                        {name: '待生产',value: 90}
+                       
+                    ]
+                }
+            ]
+        };
+
+        // 使用刚指定的配置项和数据显示图表。
+        myChart.setOption(option);
+		
+        window.addEventListener("resize", function () {
+            myChart.resize();
+        });
+	}
+		
+		//setTimeout(myChart.resize(), 1000);
+
+
+		//控制全屏
+function enterfullscreen() { //进入全屏
+
+	window.resizeTo(800,800);
+
+
+  $("#fullscreen").html("退出全屏");
+  var docElm = document.documentElement;
+
+  //Chrome等
+   if(docElm.webkitRequestFullScreen) {
+    docElm.webkitRequestFullScreen();
+	//alert("Chrome等");
+  }
+
+  //W3C
+  else if(docElm.requestFullscreen) {
+    docElm.requestFullscreen();
+	//alert("w3c");
+  }
+  //FireFox
+  else if(docElm.mozRequestFullScreen) {
+    docElm.mozRequestFullScreen();
+	//alert("FireFox");
+  }
+  //IE11
+  else if(elem.msRequestFullscreen) {
+    elem.msRequestFullscreen();
+	//alert("IE11");
+  }
+  else  
+  {  
+	//alert("other");
+  }
+
+}
+
+function exitfullscreen() { //退出全屏
+  $("#fullscreen").html("切换全屏");
+  if(document.exitFullscreen) {
+    document.exitFullscreen();
+  } else if(document.mozCancelFullScreen) {
+    document.mozCancelFullScreen();
+  } else if(document.webkitCancelFullScreen) {
+    document.webkitCancelFullScreen();
+  } else if(document.msExitFullscreen) {
+    document.msExitFullscreen();
+  }
+}
+
+var a = 0;
+$('#fullscreen').on('click', function() {
+  a++;
+  a % 2 == 1 ? enterfullscreen() : exitfullscreen();
+})
+
+
+    
+</script>
+
+<script type="text/javascript">
+	
+function loadOrderOnce(){    
+		$.ajax({
+                    type: "post",
+					url:   window.baseurl+"/digitization/plan/loadOrderOnce",
+					data: JSON.stringify({ "orderCode": document.getElementById("orderCodeTxt").value,
+				"orderDescription":document.getElementById("orderCodeTxt").value
+				}),
+                    contentType :"application/json",
+                    dataType: "json",
+					async:true,
+                    success: function (res) {
+                       alert( JSON.stringify(res.msg));
+					  
+					   if(res.data.spOrder.orderCode)
+					   {
+							
+						/*
+							localStorage.removeItem("orderCodeTxt");
+					   		localStorage.setItem("orderCodeTxt",res.data.spOrder.orderCode);
+
+
+							localStorage.removeItem("planQty");
+					   		localStorage.setItem("planQty",res.data.spOrder.planQty);
+
+							localStorage.removeItem("planQtyDaily");
+					   		localStorage.setItem("planQtyDaily",res.data.spDailyPlan.planQty);
+
+							localStorage.removeItem("realPieceTimeStandard");
+					   		localStorage.setItem("realPieceTimeStandard",res.data.spDailyPlan.pieceTime);
+							localStorage.removeItem("dailyFinishRateExcept");
+					   		localStorage.setItem("dailyFinishRateExcept",res.data.spDailyPlan.finishRate);
+
+							//alert ("set localStorage-orderCodeTxt= "+localStorage.getItem("orderCodeTxt"));
+
+					 	  	document.getElementById("planQty").innerHTML = res.data.spOrder.planQty ;
+							document.getElementById("orderFinishRate").innerHTML = res.data.spOrder.finishRate +"%"; ////!!!
+							document.getElementById("badQty").innerHTML = res.data.spOrder.badQty ;
+							document.getElementById("makedQty").innerHTML = res.data.spOrder.makedQty ;
+					*/
+
+							document.getElementById("planQtyDaily").innerHTML = res.data.spDailyPlan.planQty ;
+							document.getElementById("makedQtyDaily").innerHTML = res.data.spDailyPlan.makedQty ;
+							document.getElementById("badQtyDaily").innerHTML = res.data.spDailyPlan.badQty ;
+							document.getElementById("passRateDaily").innerHTML = res.data.spDailyPlan.passRate +"%";
+
+							document.getElementById("dailyFinishRate").innerHTML = res.data.spDailyPlan.finishRate+"%";
+							document.getElementById("dailyFinishRateExcept").innerHTML = res.data.spDailyPlan.finishRate +"%";///???
+							document.getElementById("realPieceTime").innerHTML = res.data.spDailyPlan.realPieceTime +"秒";
+							document.getElementById("realPieceTimeStandard").innerHTML = res.data.spDailyPlan.pieceTime+"秒";
+
+					   } 
+
+					   
+					  
+                    },
+                    error: function (err) {
+						alert( JSON.stringify(err));
+                    }
+                });
+        
+ 
+}
+
+
+  function  getOderPlanList(){  
+		$.ajax({
+                    type: "post",
+					url:   window.baseurl+"/digitization/plan/orderPlanList",
+					data:  JSON.stringify({ }),
+                    contentType :"application/json",
+                    dataType: "json",
+					async:true,
+                    success: function (res) {
+                       //alert( JSON.stringify(res.msg));  
+					   if(res.data)
+					   {
+				
+						var colorred = "<span class=\"text-red\">";
+						var colorgreen = "<span class=\"text-green\">";
+
+							$("#orderPlanList").find("li").remove();   //无效
+							res.data.forEach(function(item) {
+							
+								
+								var li_str = '<li> <span>' + item.orderCode +"</span> <span>" + item.planQty + "</span> <span>"+item.planStartTime +"</span> <span>"+item.planEndTime +"</span> ";
+								if(item.status=="订单终结")	li_str += colorred;
+								else 	li_str += colorgreen;
+								li_str+=item.status +"</span> <span>" +item.finishRate + "%</span></li>";
+
+        						$('#orderPlanList').append(li_str);
+
+							});
+													
+					   } 
+					   					  
+                    },
+                    error: function (err) {
+						alert( JSON.stringify(err));
+                    }
+                });
+
+
+  }
+
+
+    //alert("order="+document.getElementById("orderCodeTxt").value);
+
+  function  getProductList(){  
+		$.ajax({
+                    type: "post",
+					url:   window.baseurl+"/digitization/plan/productList",
+					//data: JSON.stringify({ "orderCode":localStorage.getItem("orderCodeTxt")}),
+					//data: JSON.stringify({ "orderCode":window.orderCodeTxt}),
+					data: JSON.stringify({ "orderCode":document.getElementById("orderCodeTxt").value}),
+					//为什么不能使用 这个 ！！！ document.getElementById("orderCodeTxt").value}),
+                    contentType :"application/json",
+                    dataType: "json",
+					async:true,
+                    success: function (res) {
+                       //alert( JSON.stringify(res));  
+					   if(res.data)
+					   {
+							var colorred = "<span class=\"text-red\">不合格</span>";
+							var colorgreen = "<span class=\"text-green\">合格</span>";
+
+							$("#productList").find("li").remove();
+							res.data.forEach(function(item) {
+								
+								var li_str = '<li> <span>' + item.productId +"</span>  ";
+									
+								li_str+=" <span>" ;
+								if(item.quality=='NG' ||item.quality=='ng'|| item.quality=='不合格')	
+								{
+									
+									li_str += colorred ;
+								}
+								else 	
+								{
+								
+									li_str += colorgreen;
+								}
+
+								
+
+								li_str+=" <span>" +item.createTime + "</span></li>";
+
+        						$('#productList').append(li_str);
+
+							});
+													
+					   } 
+					   					  
+                    },
+                    error: function (err) {
+						alert( JSON.stringify(err));
+                    }
+                });
+
+
+  }
+
+
+  function  getExceptionList(){  
+		$.ajax({
+                    type: "post",
+					url:   window.baseurl+"/digitization/plan/getExceptionList",
+					data: JSON.stringify({ "orderCode":document.getElementById("orderCodeTxt").value}),
+					//为什么不能使用 这个 ！！！ document.getElementById("orderCodeTxt").value}),
+                    contentType :"application/json",
+                    dataType: "json",
+					async:true,
+                    success: function (res) {
+                       //alert( JSON.stringify(res));  
+					   if(res.data)
+					   {
+							var colorred = "<span class=\"text-red\" >";
+							var coloryellow = "<span class=\"text-yellow\" >";
+							var colorgreen = "<span class=\"text-green\" >";
+
+							$("#exceptionList").find("li").remove();
+							var  count = 0;
+
+							res.data.forEach(function(item) {
+								var li_str="";
+								
+								if(item.flag=='故障')
+								 li_str = "<li> "+ colorred + item.errorDesc +"</span> </li> ";
+								else if (item.flag=='维修中')
+								 li_str = "<li> "+ coloryellow + item.errorDesc +"</span> </li> ";
+								 else  
+								 li_str = "<li> "+ colorgreen + item.errorDesc +"</span> </li> ";
+									
+        						$('#exceptionList').append(li_str);
+								count = count +1;
+
+							});
+							document.getElementById("exceptionListTitle").innerText= "异常列表 "+ "总计 "+ count;	
+
+										
+					   } 
+					   					  
+                    },
+                    error: function (err) {
+						alert( JSON.stringify(err));
+                    }
+                });
+
+
+  }
+
+
+  
+
+
+  
+  function  getProductListDEmo1(){  
+		
+		var colorred = "<span class=\"text-red\">不合格</span>";
+		var colorgreen = "<span class=\"text-green\">合格</span>";
+
+		$('#productList').find("li").remove(); 
+		//$('#productList').remove(); 
+
+	     for (var i=0 ; 1< 60 ; i++) 
+		 {
+
+   
+			var li_str = '<li> <span>' +  'ECG20220805'+i +"</span>  ";
+				
+
+			if(i==30 )	li_str += colorred ;
+			else 	li_str += colorgreen;
+
+			li_str+=" <span>" +  '2022-08-05 10:10' +i + "</span></li>";
+
+			$('#productList').append(li_str);
+
+		 }
+							
+
+  }
+
+
+ 
+  function  getProductListDEmo()  {  
+		
+		var colorred = "<span class=\"text-red\">不合格</span>";
+		var colorgreen = "<span class=\"text-green\">合格</span>";
+
+		$('#productList').find("li").remove(); 
+		//$('#productList').remove(); 
+
+	     for (var i=0 ; 1< 60 ; i++) 
+		 {
+
+   
+			var li_str = '<li> <span>' +  'ECG20220805'+i +"</span>  ";
+				
+
+			if(i==30 )	li_str += colorred ;
+			else 	li_str += colorgreen;
+
+			li_str+=" <span>" +  '2022-08-05 10:10' +i + "</span></li>";
+
+			$('#productList').append(li_str);
+
+		 }
+							
+
+  }
+
+
+
+
+
+  function  flushFinishRate(){  
+		$.ajax({
+                    type: "post",
+					url:   window.baseurl+"/digitization/plan/FlushFinishRate",
+					data: JSON.stringify({ "orderCode":document.getElementById("orderCodeTxt").value}),
+					//不能使用 这个 ！！！ document.getElementById("orderCodeTxt").value}),
+                    contentType :"application/json",
+                    dataType: "json",
+					async:true,
+                    success: function (res) {
+                       //alert( JSON.stringify(res));  
+					   if(res.data)
+					   {
+						
+					   }						   					  
+                    },
+                    error: function (err) {
+						alert( JSON.stringify(err));
+                    }
+                });
+
+
+		  }
+
+
+
+
+  function  recentProductAvgDiffList(){  
+		$.ajax({
+                    type: "post",
+					url:   window.baseurl+"/digitization/plan/recentProductAvgDiffList",
+					data: JSON.stringify({ "orderCode":document.getElementById("orderCodeTxt").value}),
+					//不能使用 这个 ！！！ document.getElementById("orderCodeTxt").value}),
+                    contentType :"application/json",
+                    dataType: "json",
+					async:true,
+                    success: function (res) {
+                       //alert( JSON.stringify(res));  
+					   if(res.data)
+					   {
+						var chart = echarts.getInstanceByDom(document.getElementById('echart3'));		
+						var option = chart.getOption();		 
+						option.series[0].data = res.data;
+						chart.setOption(option);
+					   }						   					  
+                    },
+                    error: function (err) {
+						alert( JSON.stringify(err));
+                    }
+                });
+
+
+		  }
+
+
+
+		  function  recentBadProductList(){  
+		$.ajax({
+                    type: "post",
+					url:   window.baseurl+"/digitization/plan/recentBadProductList",
+					data: JSON.stringify({ "orderCode":document.getElementById("orderCodeTxt").value}),
+					//不能使用 这个 ！！！ document.getElementById("orderCodeTxt").value}),
+                    contentType :"application/json",
+                    dataType: "json",
+					async:true,
+                    success: function (res) {
+                       //alert( JSON.stringify(res));  
+					   if(res.data)
+					   {
+						var chart = echarts.getInstanceByDom(document.getElementById('badProductChart'));		
+						var option = chart.getOption();		 
+						option.series[0].data = res.data;
+						chart.setOption(option);
+					   }						   					  
+                    },
+                    error: function (err) {
+						alert( JSON.stringify(err));
+                    }
+                });
+
+
+		  }
+
+
+
+		  //setTimeout(addProduct,1000);
+		  function addProduct (){			
+			var  data = { "orderNo":localStorage.getItem("orderCodeTxt") ,
+							"productId":"bitch",
+							"id":"1549035413507842049"
+				};
+
+				alert("data="+JSON.stringify(data));
+
+			$.ajax({
+                    type: "post",
+					url:   window.baseurl+"/digitization/plan/updateProduct",
+					data: JSON.stringify(data),
+					//不能使用 这个 ！！！ document.getElementById("orderCodeTxt").value}),
+                    contentType :"application/json",
+                    dataType: "json",
+					async:true,
+                    success: function (res) {
+                       alert( JSON.stringify(res));  
+					   if(res.data)
+					   {
+					
+					   }						   					  
+                    },
+                    error: function (err) {
+						alert( JSON.stringify(err));
+                    }
+                });
+
+			
+		  }
+		  
+
+
+		  function GetCurrentGroup (){
+
+		  $.ajax({
+                    type: "post",
+					url: window.baseurl+"/digitization/plan/GetCurrentGroup",
+                    dataType: "json",
+					async:true,
+					data: JSON.stringify({  "orderCode": window.orderCodeTxt,"lineId": "磁阻传感器"   }),
+                    contentType :"application/json",
+                    success: function (res) {
+
+						//alert("res="+ JSON.stringify(res));
+
+					 if(res.data)
+					   {
+						 document.getElementById("groupName").innerHTML=res.data.name;
+						 document.getElementById("groupLeader").innerHTML=res.data.leader;
+						 document.getElementById("groupCount").innerHTML=res.data.groupCount;
+						 document.getElementById("groupContact").innerHTML=res.data.contact;	
+						 
+					   }						   					  
+                    },
+                    error: function (err) {
+						alert('error='+ JSON.stringify(err));
+                    }
+        });
+	
+	}
+
+
+
+
+  </script>
+
+
+
+</body>
+</html>
