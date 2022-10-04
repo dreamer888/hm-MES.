@@ -48,7 +48,8 @@ demo  网址 http://47.240.54.105:8081
 
 后端
 
-![输入图片说明](image2.png)
+
+![输入图片说明](image-order-gant.png)
 
 ![输入图片说明](image3.png)
 
