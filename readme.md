@@ -57,8 +57,23 @@ demo  网址 http://47.240.54.105:8081
 
 ![输入图片说明](image=product.png)
 
-四、 项目是看板部分源码
+四、 源码地址 
+
+
+
+1  本项目是看板部分源码 ，前端代码  https://gitee.com/imdreamer/hm-MES.git
+
+2   后端代码  ：https://gitee.com/wangziyangyang/MES-Springboot.git
+
+五、 项目技术架构
+
+前端   echarts， html，juery 
+
+后端技术 :springBoot, netty，mybatis+，mysql ,redis,mq,
+udp, tcp,http, mqtt, websocket, modbus,plc，
+时序数据库tdEngine
 
 五、  技术支持
+
 
 手机/微信 18665802636 ，QQ 75039960
