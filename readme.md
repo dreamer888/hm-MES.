@@ -78,13 +78,21 @@ udp, tcp,http, mqtt, websocket, modbus,plc，
 五、 相关技术资料链接
 
 前端
+
 日期工具库：static/lib/dayjs.min.js
+
 Javascript 工具库：static/lib/lodash.min.js
+
 Layui 树形表格插件
+
 https://gitee.com/whvse/treetable-lay
+
 图标库使用
+
 http://www.fontawesome.com.cn/faicons
+
 echart
+
 https://www.echartsjs.com/zh/api.html#echarts
 
 六、  技术支持
