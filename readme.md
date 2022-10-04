@@ -97,5 +97,6 @@ https://www.echartsjs.com/zh/api.html#echarts
 
 六、  技术支持
 
+ 欢迎 start 和 fork
 
 手机/微信 18665802636 ，QQ 75039960
