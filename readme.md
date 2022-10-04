@@ -61,9 +61,11 @@ demo  网址 http://47.240.54.105:8081
 
 
 
-1  本项目是看板部分源码 ，前端代码  https://gitee.com/imdreamer/hm-MES.git
+1  本项目是看板部分源码 ，前端代码 参考  https://gitee.com/imdreamer/hm-MES.git
 
-2   后端代码  ：https://gitee.com/wangziyangyang/MES-Springboot.git
+2   后端代码 参考 ：https://gitee.com/wangziyangyang/MES-Springboot.git
+
+3   物联网组件  参考  ：https://gitee.com/iteaj/iot.git
 
 五、 项目技术架构
 
