@@ -74,8 +74,8 @@ demo  网址 http://47.240.54.105:8081
 
 前端   echarts， html，juery 
 
-后端技术 :springBoot, netty，mybatis+，mysql ,redis,mq,
-udp, tcp,http, mqtt, websocket, modbus,plc，
+后端技术 :springBoot, netty，mybatis+，mysql ,redis,rabbitmq, mqtt,
+udp, tcp,http, mqtt, websocket, modbus,plc，欧姆龙，西门子,
 时序数据库tdEngine
 
 五、 相关技术资料链接
@@ -100,7 +100,7 @@ https://www.echartsjs.com/zh/api.html#echarts
 
 六、  技术支持
 
- 欢迎 start 和 fork
+ 欢迎 star 和 fork
 
 手机/微信 18665802636 ，QQ 75039960
 
