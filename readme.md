@@ -100,3 +100,7 @@ https://www.echartsjs.com/zh/api.html#echarts
  欢迎 start 和 fork
 
 手机/微信 18665802636 ，QQ 75039960
+
+七、qq群 二维码 
+
+![输入图片说明](image-qq%E7%BE%A4%E4%BA%8C%E7%BB%B4%E7%A0%81.png)
