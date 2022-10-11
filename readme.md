@@ -87,7 +87,7 @@ http://erp.dreammm.net
 
 2   后端代码 参考 ：https://gitee.com/wangziyangyang/MES-Springboot.git
 
-3   物联网组件  参考  ：https://gitee.com/iteaj/iot.git
+3   物联网组件用户对接设备  参考  ：https://gitee.com/iteaj/iot.git
 
 五、 项目技术架构
 
