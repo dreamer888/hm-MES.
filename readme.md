@@ -57,7 +57,9 @@ http://erp.dreammm.net
 下面是 erp的一张截图  
 ![输入图片说明](image--erp%20.png)
 
+![输入图片说明](image-hmerp.png)
 
+![输入图片说明](image-%E4%BC%81%E4%B8%9A%E7%89%88%E8%8F%9C%E5%8D%95.png)
 
 三、部分截图
 
