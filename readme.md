@@ -47,15 +47,16 @@ demo  网址 http://47.240.54.105:8081
 
 http://erp.dreammm.net
 
-数据库  选择 demo
-  ，  email 填 demo ， 密码 demo
+数据库  选择 hm-erp，
+  ，  email(账户) 填 demo ， 密码 demo
 
  需要erp，crm的企业可以推荐用上，世界500强企业丰田都在用的这款erp。
  中国著名IT企业浪潮集团也是基于这款ERP开发的 ，浪潮在研发和销售基于同款ERP软件。
 
 当然，客户在实施MES的时候 可以选择和erp对接， 也可以使用独立的MES数据 
-下面是 erp的一张截图  
-![输入图片说明](image--erp%20.png)
+下面是 erp的截图  
+
+![输入图片说明](image-apps.png)
 
 ![输入图片说明](image-hmerp.png)
 
@@ -82,7 +83,6 @@ http://erp.dreammm.net
 ![输入图片说明](image=product.png)
 
 四、 源码地址 
-
 
 
 1  本项目是看板部分源码 ，前端代码 参考  https://gitee.com/imdreamer/hm-MES.git
@@ -130,3 +130,5 @@ https://www.echartsjs.com/zh/api.html#echarts
 qq群二维码 
 
 ![输入图片说明](image-qq%E7%BE%A4%E4%BA%8C%E7%BB%B4%E7%A0%81.png)
+
+
