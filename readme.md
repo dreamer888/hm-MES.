@@ -67,7 +67,8 @@ http://erp.dreammm.net
 
 ![输入图片说明](image-manfacture.png)
 
-![输入图片说明](image-%E4%BC%81%E4%B8%9A%E7%89%88%E8%8F%9C%E5%8D%95.png)
+
+![输入图片说明](image-application.png)
 
 三、部分截图
 
