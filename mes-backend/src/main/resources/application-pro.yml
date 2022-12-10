@@ -1,0 +1,36 @@
+server:
+  port: 8088
+spring:
+  mvc:
+    view:
+      prefix: /templates/
+      suffix: .ftl
+      static-path-pattern: /static/**
+  freemarker:
+    suffix: .ftl
+    templateEncoding: UTF-8
+    templateLoaderPath: classpath:/templates/
+    cache: true
+    expose-spring-macro-helpers: false
+    request-context-attribute: request
+    settings:
+      classic_compatible: true
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://127.0.0.1:3306/dream_mes?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Hongkong
+    username: 75939960@qq.com
+    password: 18665802636
+    druid:
+      initial-size: 8
+      min-idle: 5
+      max-active: 10
+      query-timeout: 6000
+      transaction-query-timeout: 6000
+      remove-abandoned-timeout: 1800
+      filters: stat,config
+
+logging:
+  level:
+    root: info
+    com.dreamer: info

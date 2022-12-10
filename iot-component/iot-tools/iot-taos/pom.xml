@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <version>1.0</version>
+        <groupId>com.dreammm.net</groupId>
+        <artifactId>iot-tools</artifactId>
+    </parent>
+
+    <modelVersion>4.0.0</modelVersion>
+    <artifactId>iot-taos</artifactId>
+
+    <description>TDengine的数据库适配模块, TDengine(taos)是分布式时序数据库 (官网https://www.taosdata.com/cn/)</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.dreammm.net</groupId>
+            <artifactId>iot-core</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <!--    只支持jNI版本, 不支持使用restful    -->
+        <dependency>
+            <version>${taos.version}</version>
+            <groupId>com.taosdata.jdbc</groupId>
+            <artifactId>taos-jdbcdriver</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.apache.httpcomponents</groupId>
+                    <artifactId>httpclient</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>com.alibaba</groupId>
+                    <artifactId>fastjson</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <artifactId>spring-jdbc</artifactId>
+            <groupId>org.springframework</groupId>
+        </dependency>
+
+        <dependency>
+            <groupId>com.zaxxer</groupId>
+            <artifactId>HikariCP</artifactId>
+        </dependency>
+    </dependencies>
+</project>

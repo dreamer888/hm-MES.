@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <version>1.0</version>
+        <artifactId>iot</artifactId>
+        <groupId>com.dreammm.net</groupId>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>iot-redis</artifactId>
+    <description>iot框架的redis缓存模块, 包含生产者和消费者</description>
+
+    <properties>
+        <iot.version>${project.version}</iot.version>
+    </properties>
+
+
+    <dependencies>
+        <dependency>
+            <optional>true</optional>
+            <groupId>com.dreammm.net</groupId>
+            <artifactId>iot-client</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <optional>true</optional>
+            <groupId>com.dreammm.net</groupId>
+            <artifactId>iot-server</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>org.springframework.boot</groupId>
+                    <artifactId>spring-boot-starter-logging</artifactId>
+                </exclusion>
+                <exclusion>
+                    <groupId>io.netty</groupId>
+                    <artifactId>*</artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-aop</artifactId>
+        </dependency>
+    </dependencies>
+</project>

@@ -1,0 +1,7 @@
+org.springframework.context.ApplicationListener=\
+com.dream.iot.IotFrameworkReadyListener,\
+com.dream.iot.SpringStartingListener
+
+# Auto Configure
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.dream.iot.IotCoreConfiguration

@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <parent>
+        <version>1.0</version>
+        <artifactId>iot</artifactId>
+        <groupId>com.dreammm.net</groupId>
+    </parent>
+    <modelVersion>4.0.0</modelVersion>
+
+    <artifactId>iot-mqtt</artifactId>
+    <description>基于iot框架实现的mqtt协议客户端</description>
+
+    <dependencies>
+        <dependency>
+            <groupId>com.dreammm.net</groupId>
+            <artifactId>iot-client</artifactId>
+            <version>${project.version}</version>
+        </dependency>
+    </dependencies>
+
+</project>

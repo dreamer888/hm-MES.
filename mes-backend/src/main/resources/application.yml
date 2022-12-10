@@ -1,0 +1,18 @@
+server:
+  session-timeout: 1800
+spring:
+  profiles:
+    active: dev
+  cache:
+    type: ehcache
+    ehcache:
+      config: classpath:config/ehcache.xml
+
+swagger:
+  controller: com.lgl.mes
+  description: MES接口管理
+  enable: true
+  license: lgl
+  licenseUrl: https://gitee.com/lgl/MES-Sprongboot
+  title: dreamer的API 管理
+  version: 1.0.0

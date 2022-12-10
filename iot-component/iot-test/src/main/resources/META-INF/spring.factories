@@ -1,0 +1,6 @@
+org.springframework.context.ApplicationListener=\
+com.dream.iot.test.IotTestStartListener
+
+# Auto Configure
+org.springframework.boot.autoconfigure.EnableAutoConfiguration=\
+com.dream.iot.test.IotTestAutoConfiguration

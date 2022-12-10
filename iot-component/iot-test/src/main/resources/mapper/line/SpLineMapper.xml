@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.dream.iot.test.db.line.mapper.SpLineMapper">
+
+
+    <resultMap id="resultMap" type="com.dream.iot.test.db.line.entity.SpLine">
+        <id column="id" property="id"/>
+        <result column="line" property="line"/>
+        <result column="line_desc" property="lineDesc"/>
+        <result column="process_section" property="processSection"/>
+
+        <result column="create_username" property="createUsername"/>
+        <result column="create_time" property="createTime"/>
+        <result column="update_username" property="updateUsername"/>
+        <result column="update_time" property="updateTime"/>
+    </resultMap>
+
+    <select id="GetLineList" parameterType="java.lang.String" resultMap="resultMap">
+        SELECT * FROM sp_line
+
+    </select>
+
+
+</mapper>

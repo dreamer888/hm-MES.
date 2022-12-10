@@ -1,0 +1,65 @@
+html {
+    background-color: #ffffff;
+}
+
+body {
+    margin: 0 0 0 0;
+    background: #f2f2f2;
+}
+
+.splayui-container {
+    border: 1px solid #f2f2f2;
+    border-radius: 5px;
+    background-color: #ffffff;
+}
+
+.splayui-main {
+    margin: 10px 10px 10px 10px;
+}
+
+/**必填红点 */
+.splayui-form .layui-form-item .sp-required:after {
+    content: "*";
+    color: red;
+    position: absolute;
+    margin-left: 4px;
+    font-weight: bold;
+    line-height: 1.8em;
+    top: 6px;
+    right: 5px;
+}
+
+.splayui-form .layui-form-item > .layui-form-label {
+    /*width: 120px !important;*/
+}
+
+.splayui-form > .layui-form-item > .layui-input-block {
+    margin-left: 150px !important;
+}
+
+.splayui-form .layui-form-item > .layui-input-block > tip {
+    display: inline-block;
+    margin-top: 10px;
+    line-height: 10px;
+    font-size: 10px;
+    color: #a29c9c;
+}
+
+.box-between {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+    margin-top: 5px;
+    margin-bottom: 3px;
+}
+
+.box-between .box-between-item {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+}
