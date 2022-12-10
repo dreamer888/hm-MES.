@@ -1,10 +1,10 @@
 /*
  Navicat Premium Data Transfer
 
- Source Server         : 150.158.15.149-3307-腾讯云mysql8-root-lgl2019
+ Source Server         : 150.158.15.149-3307-腾讯云mysql8-www.dreamm.net
  Source Server Type    : MySQL
  Source Server Version : 80030
- Source Host           : 150.158.15.149:3307
+ Source Host           : 150.158.15.150:3307
  Source Schema         : hme-mes
 
  Target Server Type    : MySQL
