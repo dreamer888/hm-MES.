@@ -93,11 +93,11 @@ http://erp.dreammm.net
 四、 源码地址 
 
 
-1  本项目是看板部分源码 ，前端代码 参考  https://gitee.com/imdreamer/hm-MES.git
+1  本项目是看板部分源码 ，前端代码 参考 mes-front
 
-2   后端代码 参考 ：https://gitee.com/wangziyangyang/MES-Springboot.git
+2   后端代码 参考 ：mes-backend
 
-3   物联网组件用户对接设备  参考  ：https://gitee.com/iteaj/iot.git
+3   物联网组件用户对接设备  参考  ：iot-componet
 
 五、 项目技术架构
 
