@@ -40,11 +40,11 @@ public class CodeGenerator2 {
 
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
-        dsc.setUrl("jdbc:mysql:/47.240.54.105:3307/sparchetype?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Hongkong&allowPublicKeyRetrieval=true");
+        dsc.setUrl("jdbc:mysql:/localhost:3307/sparchetype?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Hongkong&allowPublicKeyRetrieval=true");
         // dsc.setSchemaName("public");
         dsc.setDriverName("com.mysql.cj.jdbc.Driver");
         dsc.setUsername("root");
-        dsc.setPassword("www.dreammm.net");
+        dsc.setPassword("18665802636");
         mpg.setDataSource(dsc);
 
         // 包配置

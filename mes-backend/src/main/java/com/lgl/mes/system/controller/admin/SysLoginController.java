@@ -51,9 +51,10 @@ public class SysLoginController extends BaseController {
     @ApiOperation("后台管理欢迎页")
     @GetMapping("/welcome-ui")
     public String welcomeUI(Model model) {
-     
-         return "redirect:http://47.240.54.105:8081/index.html";
-        
+        //return "admin/welcome";
+        //return "/digitization/plan/plan-ui";
+        if(false) return "redirect:http://47.240.54.105:8081/index.html";
+        else return "redirect:http://127.0.0.1:8081/index.html";
     }
 
 

@@ -50,12 +50,12 @@ public class CodeGenerator {
 
         // 数据源配置
         DataSourceConfig dsc = new DataSourceConfig();
-        //dsc.setUrl("jdbc:mysql://127.0.0.1:3307/hme-mes?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Hongkong&allowPublicKeyRetrieval=true");
-        dsc.setUrl("jdbc:mysql://150.158.15.149:3307/hme-mes?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Hongkong&allowPublicKeyRetrieval=true");
+        dsc.setUrl("jdbc:mysql://127.0.0.1:3307/hme-mes?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Hongkong&allowPublicKeyRetrieval=true");
+        
         // dsc.setSchemaName("public");                             //设置数据库 schema name
         dsc.setDriverName("com.mysql.jdbc.Driver");
         dsc.setUsername("root");
-        dsc.setPassword("erp.dreammm.net");
+        dsc.setPassword("18665802636");
         mpg.setDataSource(dsc);
 
         // 包配置
