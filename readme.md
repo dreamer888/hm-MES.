@@ -15,7 +15,6 @@ demo  网址 http://47.240.54.105:8081
 
  admin/123456   ,验证码 ，为了方便随便输入即可比如888
 
-
 **二、目前MES系统的功能 ：** 
 
 
@@ -63,32 +62,36 @@ http://erp.dreammm.net
 当然，客户在实施MES的时候 可以选择和erp对接， 也可以使用独立的MES数据 
 下面是 erp的截图  
 
-![输入图片说明](image-apps.png)
+![输入图片说明](images/image-apps.png)
 
-![输入图片说明](image-manfacture.png)
+![输入图片说明](images/image-manfacture.png)
 
 
-![输入图片说明](image-application.png)
+![输入图片说明](images/image-application.png)
 
 三、部分截图
 
 看板
 
-![输入图片说明](image.png)
+![输入图片说明](images/image.png)
+
+
+
+
 
 后端
 
 
-![输入图片说明](image-order-gant.png)
+![输入图片说明](images/image-order-gant.png)
 
-![输入图片说明](image-daliy-plan.png)
+![输入图片说明](images/image-daliy-plan.png)
 
-![输入图片说明](image3.png)
+![输入图片说明](images/image3.png)
 
-![输入图片说明](image--%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86%E9%85%8D%E7%BD%AE-%E7%BC%96%E8%BE%91.png)
+![输入图片说明](images/image--%E6%95%B0%E6%8D%AE%E9%87%87%E9%9B%86%E9%85%8D%E7%BD%AE-%E7%BC%96%E8%BE%91.png)
 
 
-![输入图片说明](image=product.png)
+![输入图片说明](images/image=product.png)
 
 四、 源码地址 
 
@@ -137,6 +140,6 @@ https://www.echartsjs.com/zh/api.html#echarts
 
 qq群二维码 
 
-![输入图片说明](image-qq%E7%BE%A4%E4%BA%8C%E7%BB%B4%E7%A0%81.png)
+![输入图片说明](images/image-qq%E7%BE%A4%E4%BA%8C%E7%BB%B4%E7%A0%81.png)
 
 
