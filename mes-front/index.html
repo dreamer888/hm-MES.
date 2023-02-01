@@ -18,7 +18,7 @@
 	<form >
 		<input type="text"  name="orderCode"  id="orderCodeTxt" class="input" onblur="lostFocus()"  onchange="onchangeInput()" autocomplete = "off"  >
 	
-		<span><input type="submit"   value="加载订单" class="loadBtn"   onclick="loadOrderOnce()">  </span>
+		<span><input type="submit"   value="加载订单" class="loadBtn"   onclick="loadOrder()">  </span>
 	</form>
 
   
@@ -52,7 +52,7 @@
 				
 
 				<div class="p4" style="margin-top: 5%;" > <i id="realPieceTimeColor" class="dot dot1"  ></i> <span> 单件耗时 </span>   <span id="realPieceTime"> 32    </span>  </div>
-				<div class=" p4"  style=" margin-top: 5%;" ><i class="dot dot3"></i> 标定耗时  <span class="p4" id="realPieceTimeStandard">30 </span> </div>
+				<div class=" p4"  style=" margin-top: 5%;" ><i class="dot dot3"></i> 标定耗时  <span class="p4" id="realPieceTimeStandard">30秒 </span> </div>
 			</div>
 
         	<div class="boxfoot"></div>
@@ -169,49 +169,7 @@
 
 
     <li>
-
-
-		<div  style="height:calc(33.3333% - .25rem); margin-bottom: .25rem;">
-	
-			  
-		  <div class="boxall" style="height: 100%; width:calc(50% - .08rem); float: left;">
-			  <div class="tit01">当前班组</div>
-			  <div class="boxnav nav01"  > 
-				<div class=" p4"  style=" margin-top: 5%;" ><i id="groupNamexx" class=""></i> 名称  <span class="p4" id="groupName">磁阻2线1班  </span> </div>
-				  <div class=" p4"  style=" margin-top: 5%;" ><i id="groupCountxx" class=""></i> 人数  <span class="p4" id="groupCount">  3 </span> </div>
-				  <div class=" p4"  style=" margin-top: 5%;" ><i class=""></i> 负责人  <span class="p4" id="groupLeader"> 赵荻 </span> </div>
-				  <div class="p4" style="margin-top: 5%;" > <i id="groupContactxx" class=""  ></i> <span> 电话 </span>   <span id="groupContact">   18665802636  </span>  </div>
-			
-			  </div>
-  
-			  <div class="boxfoot"></div>
-			</div>	
-			
-			
-			<div class="boxall" style="height: 100%; width:calc(50% - .08rem); float: right;">
-				<div class="tit01"  id="exceptionListTitle">异常列表</div>
-  
-			  
-			   
-			   <div class="listnav listnav4 scrollDiv">
-							
-					  <ul class="yclb"  id="exceptionList">
-						  <!--li  >  <span  style="text-align: left;"  >exception 1 </span> </li>
-						  <li  >  <span  style="text-align: left;"  >Exception  2</span> </li-->
-	   
-					  </ul>
-				 </div>
-  
-				<div class="boxfoot"></div>
-			  </div>
-		  
-		
-	  </div>
-	  
-  
-	  <div class="boxall"  style="height:calc(66.666666% - .25rem);   padding: 0;">
-
-      <!--div class="boxall"   style="height:calc(100% - .25rem); padding: 0;"-->
+      <div class="boxall"   style="height:calc(100% - .25rem); padding: 0;">
         <div class="tit04">最近生产产品列表</div>
  		<div class="boxnav nav04">
 	 
@@ -226,7 +184,6 @@
 						  
 		   <ul class="smjl"  id="productList">
 
-			<!--
 			<li>               
 				<span>HME202207040001</span>
 				<span class="text-green">正常</span>
@@ -323,10 +280,9 @@
 				<span class="text-green">正常</span>
 				<span> <input type="hidden" name="countDown" value="2019/09/10 13:29:17"> <span></span></span>
 			</li>
-			
-			-->
+						
 			</ul>
-		   </div>
+						  </div>
 		  </div>
         <div class="boxfoot"></div>
       </div>
@@ -427,7 +383,7 @@ $(function(){
 	if(window.productFlag)    window.baseurl= "http://127.0.0.1:8081"; 
   	else window.baseurl = "http://47.240.54.105:8081";
 
-	//window.baseurl= "http://47.240.54.105:8081"; 
+	window.baseurl= "http://47.240.54.105:8081"; 
 
 	
  $(document).ready(function () {
@@ -443,63 +399,34 @@ $(function(){
 	  //alert("window.screen.width="+window.screen.width);     //1536px 
 	  //alert ("rem="+ $(window).width()/76.8);    // rem=20
 
-	  $.ajax({
-                    type: "get",
-					url: window.baseurl+"/digitization/plan/GetCurrentOrderCode",
-                    dataType: "json",
-					//async:true,
-                    success: function (res) {
-					   if(res.data)
-					   {
-						 orderCodeTxt = res.data;
-						 document.getElementById("orderCodeTxt").value=orderCodeTxt;
-						window.orderCodeTxt= orderCodeTxt;
-						
-					   }						   					  
-                    },
-                    error: function (err) {
-						alert('error='+ JSON.stringify(err));
-                    }
-        });
-	
-		
-		setTimeout(GetCurrentGroup,  2000);
-
+	 
 		
     });
 
-
-
-	
 window.onload = function () {
-
-	var orderCodeTxt ="";
-	   
+	
+	      
 		if( window.productFlag)  {
 
 			getOderPlanList();
-			setInterval(getOrderApi,10000);
-			setInterval(getProductList,10000);
+			setInterval(getOrderApi,5000);
+			setInterval(getProductList,5000);
 			//setInterval(recentProductAvgDiffList,1000*60*60);//一小时
 			setInterval(recentProductAvgDiffList,4000);
 
-			setInterval(recentBadProductList,10000);
-
-			setInterval(getExceptionList,3000);
-
+			setInterval(recentBadProductList,4000);
 			
 			//setInterval(flushFinishRate,5000); //刷新完成率
 		
 		}
 		else  {
 			
-			getOderPlanList();
 			getDemoApi();
 			setInterval(flushProductAvgDiffList,4000);
-			
+
+			getOderPlanList();
 			setInterval(getProductList,5000);
 
-			setInterval(getExceptionList,3000);
 			//setInterval(getProductListDEmo,10000);		
 			
 		}
@@ -513,17 +440,13 @@ window.onload = function () {
 		//alert('echart222.style.fontSize='+ document.getElementById("echart24").style.fontSize);  //15.2 
 		//多数浏览器的默认字体大小均为16px多数浏览器的默认字体大小均为16px
 
-
-
-		/*
 		var orderCodeTxt =localStorage.getItem("orderCodeTxt");
 		var planQty=localStorage.getItem("planQty");
 		var planQtyDaily=localStorage.getItem("planQtyDaily");
 		//var dailyFinishRateExcept= localStorage.getItem("dailyFinishRateExcept");
 		var realPieceTimeStandard= localStorage.getItem("realPieceTimeStandard");
 
-
-		
+	
 		 if(!( (typeof(orderCodeTxt) == "undefined" )  ||  (orderCodeTxt==null )))
 		 {
 			document.getElementById("orderCodeTxt").value=orderCodeTxt;
@@ -537,7 +460,6 @@ window.onload = function () {
 			window.orderCodeTxt =orderCodeTxt;
 			
 		 }
-		 */
 
 
 		
@@ -629,7 +551,7 @@ window.onload = function () {
                     dataType: "json",
 					async:true,
                     success: function (res) {
-                       //alert( JSON.stringify(res));
+                       //alert( JSON.stringify(res.msg));
 					  
 					   if(res.data.spOrder.orderCode)
 					   {
@@ -684,6 +606,10 @@ window.onload = function () {
                     }
                 });
 
+
+				
+				
+    
 
 	}
 
@@ -1095,10 +1021,10 @@ $('#fullscreen').on('click', function() {
 
 <script type="text/javascript">
 	
-function loadOrderOnce(){    
+function loadOrder(){    
 		$.ajax({
                     type: "post",
-					url:   window.baseurl+"/digitization/plan/loadOrderOnce",
+					url:   window.baseurl+"/digitization/plan/loadOrder",
 					data: JSON.stringify({ "orderCode": document.getElementById("orderCodeTxt").value,
 				"orderDescription":document.getElementById("orderCodeTxt").value
 				}),
@@ -1110,8 +1036,6 @@ function loadOrderOnce(){
 					  
 					   if(res.data.spOrder.orderCode)
 					   {
-							
-						/*
 							localStorage.removeItem("orderCodeTxt");
 					   		localStorage.setItem("orderCodeTxt",res.data.spOrder.orderCode);
 
@@ -1133,7 +1057,7 @@ function loadOrderOnce(){
 							document.getElementById("orderFinishRate").innerHTML = res.data.spOrder.finishRate +"%"; ////!!!
 							document.getElementById("badQty").innerHTML = res.data.spOrder.badQty ;
 							document.getElementById("makedQty").innerHTML = res.data.spOrder.makedQty ;
-					*/
+
 
 							document.getElementById("planQtyDaily").innerHTML = res.data.spDailyPlan.planQty ;
 							document.getElementById("makedQtyDaily").innerHTML = res.data.spDailyPlan.makedQty ;
@@ -1200,16 +1124,12 @@ function loadOrderOnce(){
   }
 
 
-    //alert("order="+document.getElementById("orderCodeTxt").value);
-
   function  getProductList(){  
 		$.ajax({
                     type: "post",
 					url:   window.baseurl+"/digitization/plan/productList",
-					//data: JSON.stringify({ "orderCode":localStorage.getItem("orderCodeTxt")}),
-					//data: JSON.stringify({ "orderCode":window.orderCodeTxt}),
-					data: JSON.stringify({ "orderCode":document.getElementById("orderCodeTxt").value}),
-					//为什么不能使用 这个 ！！！ document.getElementById("orderCodeTxt").value}),
+					data: JSON.stringify({ "orderCode":localStorage.getItem("orderCodeTxt")}),
+					//不能使用 这个 ！！！ document.getElementById("orderCodeTxt").value}),
                     contentType :"application/json",
                     dataType: "json",
 					async:true,
@@ -1224,21 +1144,8 @@ function loadOrderOnce(){
 							res.data.forEach(function(item) {
 								
 								var li_str = '<li> <span>' + item.productId +"</span>  ";
-									
-								li_str+=" <span>" ;
-								if(item.quality=='NG' ||item.quality=='ng'|| item.quality=='不合格')	
-								{
-									
-									li_str += colorred ;
-								}
-								else 	
-								{
-								
-									li_str += colorgreen;
-								}
-
-								
-
+								if(item.quality=='NG' ||item.quality=='ng'|| item.quality=='不合格')	li_str += colorred ;
+								else 	li_str += colorgreen;
 								li_str+=" <span>" +item.createTime + "</span></li>";
 
         						$('#productList').append(li_str);
@@ -1256,57 +1163,6 @@ function loadOrderOnce(){
 
   }
 
-
-  function  getExceptionList(){  
-		$.ajax({
-                    type: "post",
-					url:   window.baseurl+"/digitization/plan/getExceptionList",
-					data: JSON.stringify({ "orderCode":document.getElementById("orderCodeTxt").value}),
-					//为什么不能使用 这个 ！！！ document.getElementById("orderCodeTxt").value}),
-                    contentType :"application/json",
-                    dataType: "json",
-					async:true,
-                    success: function (res) {
-                       //alert( JSON.stringify(res));  
-					   if(res.data)
-					   {
-							var colorred = "<span class=\"text-red\" >";
-							var coloryellow = "<span class=\"text-yellow\" >";
-							var colorgreen = "<span class=\"text-green\" >";
-
-							$("#exceptionList").find("li").remove();
-							var  count = 0;
-
-							res.data.forEach(function(item) {
-								var li_str="";
-								
-								if(item.flag=='故障')
-								 li_str = "<li> "+ colorred + item.errorDesc +"</span> </li> ";
-								else if (item.flag=='维修中')
-								 li_str = "<li> "+ coloryellow + item.errorDesc +"</span> </li> ";
-								 else  
-								 li_str = "<li> "+ colorgreen + item.errorDesc +"</span> </li> ";
-									
-        						$('#exceptionList').append(li_str);
-								count = count +1;
-
-							});
-							document.getElementById("exceptionListTitle").innerText= "异常列表 "+ "总计 "+ count;	
-
-										
-					   } 
-					   					  
-                    },
-                    error: function (err) {
-						alert( JSON.stringify(err));
-                    }
-                });
-
-
-  }
-
-
-  
 
 
   
@@ -1374,7 +1230,7 @@ function loadOrderOnce(){
 		$.ajax({
                     type: "post",
 					url:   window.baseurl+"/digitization/plan/FlushFinishRate",
-					data: JSON.stringify({ "orderCode":document.getElementById("orderCodeTxt").value}),
+					data: JSON.stringify({ "orderCode":localStorage.getItem("orderCodeTxt")}),
 					//不能使用 这个 ！！！ document.getElementById("orderCodeTxt").value}),
                     contentType :"application/json",
                     dataType: "json",
@@ -1401,7 +1257,7 @@ function loadOrderOnce(){
 		$.ajax({
                     type: "post",
 					url:   window.baseurl+"/digitization/plan/recentProductAvgDiffList",
-					data: JSON.stringify({ "orderCode":document.getElementById("orderCodeTxt").value}),
+					data: JSON.stringify({ "orderCode":localStorage.getItem("orderCodeTxt")}),
 					//不能使用 这个 ！！！ document.getElementById("orderCodeTxt").value}),
                     contentType :"application/json",
                     dataType: "json",
@@ -1430,7 +1286,7 @@ function loadOrderOnce(){
 		$.ajax({
                     type: "post",
 					url:   window.baseurl+"/digitization/plan/recentBadProductList",
-					data: JSON.stringify({ "orderCode":document.getElementById("orderCodeTxt").value}),
+					data: JSON.stringify({ "orderCode":localStorage.getItem("orderCodeTxt")}),
 					//不能使用 这个 ！！！ document.getElementById("orderCodeTxt").value}),
                     contentType :"application/json",
                     dataType: "json",
@@ -1456,7 +1312,9 @@ function loadOrderOnce(){
 
 
 		  //setTimeout(addProduct,1000);
-		  function addProduct (){			
+		  function addProduct (){
+
+			
 			var  data = { "orderNo":localStorage.getItem("orderCodeTxt") ,
 							"productId":"bitch",
 							"id":"1549035413507842049"
@@ -1487,38 +1345,6 @@ function loadOrderOnce(){
 			
 		  }
 		  
-
-
-		  function GetCurrentGroup (){
-
-		  $.ajax({
-                    type: "post",
-					url: window.baseurl+"/digitization/plan/GetCurrentGroup",
-                    dataType: "json",
-					async:true,
-					data: JSON.stringify({  "orderCode": window.orderCodeTxt,"lineId": "磁阻传感器"   }),
-                    contentType :"application/json",
-                    success: function (res) {
-
-						//alert("res="+ JSON.stringify(res));
-
-					 if(res.data)
-					   {
-						 document.getElementById("groupName").innerHTML=res.data.name;
-						 document.getElementById("groupLeader").innerHTML=res.data.leader;
-						 document.getElementById("groupCount").innerHTML=res.data.groupCount;
-						 document.getElementById("groupContact").innerHTML=res.data.contact;	
-						 
-					   }						   					  
-                    },
-                    error: function (err) {
-						alert('error='+ JSON.stringify(err));
-                    }
-        });
-	
-	}
-
-
 
 
   </script>

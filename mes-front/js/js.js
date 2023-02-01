@@ -125,7 +125,7 @@ $(document).ready(function(){
                 max: 100,
                 num:40,
             }, {
-                name: '6打码',
+                name: '6贴码',
                 max: 100,
                 num:33,
             }, {
@@ -133,11 +133,11 @@ $(document).ready(function(){
                 max: 100,
                 num:10,
             }, {
-                name: '4加固',
+                name: '4固定',
                 max: 100,
                 num:50,
             }, {
-                name: '3绕丝',
+                name: '3缠绕',
                 max: 100,
                 num:90,
             }, {
