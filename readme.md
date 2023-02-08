@@ -70,7 +70,7 @@ http://erp.dreammm.net
 
 ![输入图片说明](images/image-application.png)
 
-三、部分截图
+**三、部分截图**
 
 看板
 
@@ -94,7 +94,7 @@ http://erp.dreammm.net
 
 ![输入图片说明](images/image=product.png)
 
-四、 源码地址 
+**四、 源码地址 **
 
 
 1  本项目是看板部分源码 ，前端代码 参考 mes-front
@@ -103,7 +103,7 @@ http://erp.dreammm.net
 
 3   物联网组件用户对接设备  参考  ：iot-componet
 
-五、 项目技术架构
+**五、 项目技术架构**
 
 前端   echarts， html，juery 
 
@@ -112,7 +112,7 @@ udp, tcp,http, mqtt, websocket, modbus,plc，欧姆龙，西门子,
 时序数据库tdEngine
 
 ==============
-五、 相关技术资料链接
+**六、 相关技术资料链接**
 
 另外一套MES演示 
 http://47.242.184.27:8071/mes/md/mditem
@@ -142,13 +142,13 @@ https://www.echartsjs.com/zh/api.html#echarts
 
 
 
-六、  技术支持
+**七、  技术支持**
 
  欢迎 star 和 fork
 
 手机/微信 18665802636 ，QQ 75039960
 
-七、qq群 298734429 
+**八、qq群 298734429 **
 
 qq群二维码 
 
