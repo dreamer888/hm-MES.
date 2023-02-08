@@ -112,12 +112,14 @@ udp, tcp,http, mqtt, websocket, modbus,plc，欧姆龙，西门子,
 时序数据库tdEngine
 
 ==============
+
 **六、 相关技术资料链接**
 
 另外一套MES演示 
+
 http://47.242.184.27:8071/mes/md/mditem
 
-![输入图片说明](other-mes.png)
+![输入图片说明](/images/other-mes.png)
 
 ===========
 
