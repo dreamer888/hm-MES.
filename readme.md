@@ -33,6 +33,7 @@ demo  网址 http://47.240.54.105:8081
 7、班组管理，
 
 8、质量管理、
+
 9、报工 （包含在产品管理模块中，自动报工）
 
 10、现场数据采集（PLC设备，网口/串口通讯，二维码扫描等），
@@ -110,7 +111,15 @@ http://erp.dreammm.net
 udp, tcp,http, mqtt, websocket, modbus,plc，欧姆龙，西门子,
 时序数据库tdEngine
 
+==============
 五、 相关技术资料链接
+
+另外一套MES演示 
+http://47.242.184.27:8071/mes/md/mditem
+
+![输入图片说明](other-mes.png)
+
+===========
 
 前端
 
@@ -129,6 +138,9 @@ http://www.fontawesome.com.cn/faicons
 echart
 
 https://www.echartsjs.com/zh/api.html#echarts
+
+
+
 
 六、  技术支持
 
