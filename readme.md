@@ -53,11 +53,12 @@ demo  网址 http://47.240.54.105:8081
 仓库，物料，产品，BOM，订单，设备，班组人员，客户和供应商
 
 http://erp.dreammm.net
+（该ERP 也包含 MES 功能）
 
-数据库  选择 hm-erp，
+数据库  选择 hm-erp ，
   ，  email(账户) 填 demo ， 密码 demo
 
- 需要erp，crm的企业可以推荐用上，世界500强企业丰田都在用的这款erp。
+ 需要erp，crm，mes的企业可以推荐用上，世界500强企业丰田都在用的这款erp。
  中国著名IT企业浪潮集团也是基于这款ERP开发的 ，浪潮在研发和销售基于同款ERP软件。
 
 当然，客户在实施MES的时候 可以选择和erp对接， 也可以使用独立的MES数据 
@@ -115,7 +116,7 @@ udp, tcp,http, mqtt, websocket, modbus,plc，欧姆龙，西门子,
 
 **六、 相关技术资料链接**
 
-另外一套MES演示 
+另外一套MES演示链接 
 
 http://47.242.184.27:8071/
 
