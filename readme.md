@@ -44,7 +44,7 @@ demo  网址 http://47.240.54.105:8081
 
 13、报表和数据导入导出。
 
-14、本MES系统设计的时候，已经考虑到兼容多条产品线 
+14、兼容多条产品线 
 
 15、 后端和ERP的对接 ：
 
@@ -106,11 +106,14 @@ http://erp.dreammm.net
 
 **五、 项目技术架构**
 
-前端   echarts， html，juery 
+前端    html+js+css，jquery ,echarts，等
 
-后端技术 :springBoot, netty，mybatis+，mysql ,redis,rabbitmq, mqtt,
-udp, tcp,http, mqtt, websocket, modbus,plc，欧姆龙，西门子,
-时序数据库tdEngine
+后端技术 :springBoot, shiro，netty，mybatis plus，mysql ,redis,rabbitmq。
+
+丰富的物联网组件，用于数据采集：
+
+udp, tcp,http, mqtt, rabbitmq，websocket, modbus,plc，欧姆龙Fins，西门子 PLC,
+时序数据库tdEngine，mysql，redis
 
 ==============
 
