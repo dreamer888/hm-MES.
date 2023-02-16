@@ -111,12 +111,20 @@ http://erp.dreammm.net
 
 udp, tcp,http, mqtt, rabbitmq，websocket, modbus,plc，欧姆龙Fins，西门子 PLC,
 时序数据库tdEngine，mysql，redis
+启动入口是iot-test ，
+在物联网组件项目下面有一份 readme.md
+
+建议 ：数据采集后请使用 mq 组件传递到 mes 或者其它物联网后端应用，能够更好的解耦。
+Netty 可以启动多线程 处理多个端口的数据采集 。
 
 ==============
 
 **六、 相关技术资料链接**
 
-另外一套MES演示链接 
+在doc目录下面有一份说明文档《开源MES和开源ERP说明书.pdf》
+
+
+**另外一套MES演示链接 
 
 http://47.242.184.27:8071/
 
@@ -148,8 +156,7 @@ https://www.echartsjs.com/zh/api.html#echarts
 
 手机/微信 18665802636 ，QQ 75039960
 
-**八、qq群 298734429 **
-
+八、qq交流群 298734429 
 qq群二维码 
 
 ![输入图片说明](images/image-qq%E7%BE%A4%E4%BA%8C%E7%BB%B4%E7%A0%81.png)
