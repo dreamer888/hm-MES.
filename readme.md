@@ -95,11 +95,23 @@ http://erp.dreammm.net
 **四、 源码地址 **
 
 
-1  本项目是看板部分源码 ，前端代码 参考 mes-front
+1     前端代码 参考 mes-front,,  用nginx 部署
 
-2   后端代码 参考 ：mes-backend
+2   后端代码 参考 ：mes-backend  
+
+
+      需要替换 mysql 配置， redis  配置，  
+
+      rabbitmq url 配置是在controller文件代码中配置的，
+      是选择项，不一定配置， 
+
+     前端的url 也是 在controller 文件中配置的 ，这个必须配置正确。
+      在 controller 配置的两个url  ，可以通过“数据采集配置” 界面进行配置  。
 
 3   物联网组件用户对接设备  参考  ：iot-componet
+
+     这个没有设备，不实际采集数据就不用启动它 。
+     
 
 **五、 项目技术架构**
 
