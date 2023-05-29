@@ -205,5 +205,5 @@ HM-MES 工厂管家 系统特色说明 第2页计精美看板，自定义实体�
 
 https://www.bilibili.com/video/BV1gs4y1978N/?vd_source=1db635fc04060deb7c4dfe378341bb4a
 
-![输入图片说明](kanban.png)
+![输入图片说明](images/kanban.png)
 
