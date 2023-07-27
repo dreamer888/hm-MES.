@@ -126,7 +126,7 @@ http://erp.dreammm.net
 
 **五、 项目技术架构**
 
-前端    html+js+css，jquery ,echarts，等
+前端    html+js+css，jquery ,echarts，freemarker+layui 等
 
 后端技术 :springBoot, shiro，netty，mybatis plus，mysql ,redis,rabbitmq。
 
