@@ -103,7 +103,7 @@ http://erp.dreammm.net
 **四、 源码地址 **
 
 
-1     看板前端代码 参考 mes-front,,  用nginx 部署，doc目录下面有样本
+1   看板前端代码 参考 mes-front,,  用nginx 部署，doc目录下面有nginx.config样本
 
 2   后端代码 参考 ：mes-backend  
 
@@ -111,11 +111,11 @@ http://erp.dreammm.net
       需要替换 mysql 配置， redis  配置，  
 
       rabbitmq url 配置是在controller文件代码中配置的，或者在数据库表里面配置
-      是选择项，不一定配置， 
+      rabbitmq 是可选择项，不一定配置， 不配置不影响系统整体运行。
 
-     前端的url 也是 在controller 文件中配置的 ，这个必须配置正确。
+     前端看板的url，这个必须配置正确 ，也是 在controller 文件中配置的。
 
-      在 controller 配置的两个url  ，高版本的，可以通过“数据采集配置” 界面进行配置 ，或者在数据库表里面配置 。
+      在 controller 配置的两个url  ，高版本的软件，可以通过“数据采集配置” 界面进行配置 ，或者在数据库表里面配置 。
 
         后端API 的swagger展示界面地址 ：
        http://localhost:8044/swagger-ui.html
