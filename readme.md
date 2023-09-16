@@ -9,7 +9,7 @@ MOM概念的提出正是基于mes这个尴尬的问题 。
 
 请在电脑浏览器(推荐使用chrome)下打开体验网址
 
-demo  网址 http://47.240.54.105:8081
+demo  看板网址 http://47.240.54.105:8081
 
 后端  http://47.240.54.105:8088 
 
@@ -17,9 +17,11 @@ demo  网址 http://47.240.54.105:8081
 
 
 提示：
-win11下面，后端启动后需要等一段时间（时间不确定，有时间比较快几秒钟，有时间比较慢可能是30分钟，原因未知）， 浏览器下的界面才能显示出来。
+1、 win11下面，后端启动后需要等一段时间（时间不确定，有时间比较快几秒钟，有时间比较慢可能是30分钟，原因未知）， 浏览器下的界面才能显示出来。
 
 在win10，windows server 2016，linux下面 ，没有这个问题，都是立即显示界面的 。
+
+2、 如果没有安装rabbitmq ，java启动的时候会有出错提示， 连接不到mq服务器 ，不影响使用。
 
 
 **二、目前MES系统的功能 ：** 
@@ -101,7 +103,7 @@ http://erp.dreammm.net
 **四、 源码地址 **
 
 
-1     前端代码 参考 mes-front,,  用nginx 部署，doc目录下面有样本
+1     看板前端代码 参考 mes-front,,  用nginx 部署，doc目录下面有样本
 
 2   后端代码 参考 ：mes-backend  
 
@@ -125,10 +127,13 @@ http://erp.dreammm.net
      
 
 **五、 项目技术架构**
+主体项目 是 基于java 的，前后一体的，  看板是前后分离的 。
 
-前端    html+js+css，jquery ,echarts，freemarker+layui 等
+看板前端    html+js+css，jquery ,echarts，
 
 后端技术 :springBoot, shiro，netty，mybatis plus，mysql ,redis,rabbitmq。
+
+管理端模板： freemarker+layui 等
 
 丰富的物联网组件，用于数据采集：
 
@@ -149,6 +154,9 @@ Netty 可以启动多线程 处理多个端口的数据采集 。
 
 以及《简易mes部署说明.docx》
 
+《阿里巴巴Java开发手册（嵩山版）.pdf》
+
+几个导入用的模板文件
 
 =====简易MES 前端技术资料 ：=====
 
