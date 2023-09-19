@@ -103,9 +103,9 @@ http://erp.dreammm.net
 **四、 源码地址 **
 
 
-1   看板前端代码 参考 mes-front,,  用nginx 部署，doc目录下面有nginx.config样本
+1、   看板前端代码 参考 mes-front,,  用nginx 部署，doc目录下面有nginx.config样本
 
-2   后端代码 参考 ：mes-backend  
+2、   后端代码 参考 ：mes-backend  
 
 
       需要替换 mysql 配置， redis  配置，  
@@ -121,12 +121,13 @@ http://erp.dreammm.net
        http://localhost:8044/swagger-ui.html
 
 
-3   物联网组件用户对接设备  参考  ：iot-componet
+3、   物联网组件用户对接设备  参考  ：iot-componet
 
      这个如果没有设备，不实际采集数据就不用启动它，启动的入口项目是test 。
      
 
 **五、 项目技术架构**
+
 1、主体项目 是 基于java 的，前后一体的，  看板是前后分离的 。数据采集程序是基于java netty架构。
 
 2、看板前端    html+js+css，jquery ,echarts，
