@@ -127,19 +127,19 @@ http://erp.dreammm.net
      
 
 **五、 项目技术架构**
-主体项目 是 基于java 的，前后一体的，  看板是前后分离的 。
+1、主体项目 是 基于java 的，前后一体的，  看板是前后分离的 。数据采集程序是基于java netty架构。
 
-看板前端    html+js+css，jquery ,echarts，
+2、看板前端    html+js+css，jquery ,echarts，
 
-后端技术 :springBoot, shiro，netty，mybatis plus，mysql ,redis,rabbitmq。
+3、后端技术 :springBoot, shiro，netty，mybatis plus，mysql ,redis,rabbitmq。
 
 管理端模板： freemarker+layui 等
 
-丰富的物联网组件，用于数据采集：
+4、数据采集：丰富的物联网组件，支持众多协议：
 
-udp, tcp,http, mqtt, rabbitmq，websocket, modbus,plc，欧姆龙Fins，西门子 PLC,
+udp, tcp,http, mqtt, rabbitmq，websocket, modbus,plc，欧姆龙Fins，西门子 PLC等,
 时序数据库tdEngine，mysql，redis
-启动入口是iot-test ，
+项目启动入口是iot-test ，
 在物联网组件项目下面有一份 readme.md
 
 建议 ：数据采集后请使用 mq 组件传递到 mes 或者其它物联网后端应用，能够更好的解耦。
@@ -178,24 +178,22 @@ echart
 https://www.echartsjs.com/zh/api.html#echarts
 
 
-**七、  技术支持**
+**七、  交流和技术支持**
 
- 分享高质量的源码不容易，欢迎 star 和 fork，
+ 1、分享高质量的源码不容易，欢迎 star 和 fork，
 
 手机/微信 18665802636 ，QQ 75039960
 
 
-八、qq交流群 298734429 
-
-qq群二维码 
+2、QQ交流群 298734429 ，qq群二维码 
 
 ![输入图片说明](images/image-qq%E7%BE%A4%E4%BA%8C%E7%BB%B4%E7%A0%81.png)
 
 
-**九、  其他版本MES介绍 
+**九、  其他版本MES 或者 WMS介绍 
 
 ================================
-**另外一套MES演示链接 ***
+1、**另外一套MES演示链接 ***
 
 后端是java  ，采用开源 ruoyi-vue-pro框架
  ，
@@ -205,7 +203,7 @@ http://47.242.184.27:8071/
 
 
 
-==========**c#版本的MES系统 ***==========
+2、==========**c#版本的MES系统 ***==========
 
 前后分离 ，后端 net core ， 前端VUE，
 了解详情请加qq。
@@ -225,6 +223,21 @@ http://47.242.184.27:8071/
 https://www.bilibili.com/video/BV1gs4y1978N/?vd_source=1db635fc04060deb7c4dfe378341bb4a
 
 
-
 ![输入图片说明](images/didaimaimage.png)
+
+3、==========**基于java 诺依架构的WMS ，带微信小程序***==========
+
+  https://gitee.com/imdreamer/wms2.git
+![输入图片说明](images/WMS%E4%B8%BB%E5%9B%BE.png)
+![输入图片说明](images/WMS%E5%B0%8F%E7%A8%8B%E5%BA%8F.png)
+
+4、==========**基于C# WPF架构的MES+WMS**========
+https://gitee.com/imdreamer/mes-wms2.git
+![输入图片说明](images/C#WMS-%E4%B8%BB%E9%A1%B5%E9%9D%A2-%E8%AE%A2%E5%8D%95%E7%AE%A1%E7%90%86.png)
+
+
+
+
+
+
 
