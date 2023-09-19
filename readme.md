@@ -146,7 +146,9 @@ udp, tcp,http, mqtt, rabbitmq，websocket, modbus,plc，欧姆龙Fins，西门�
 建议 ：数据采集后请使用 mq 组件传递到 mes 或者其它物联网后端应用，能够更好的解耦。
 Netty 可以启动多线程 处理多个端口的数据采集 。
 
-==============
+Tips： 
+大家在调试网络程序的时候经常使用到的工具NetAssist，有个严重的bug，当该软件作为tcp server使用的时候，关闭软件后资源不能充分释放，再次打开该软件发现无法正常使用，解决方法是 在工具软件tskill.exe 所在的目录下面 执行命令tskill.exe   NetAssist ， 以彻底杀死NetAssist进程并释放资源。
+
 
 **六、 相关技术资料链接**
 
