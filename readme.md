@@ -190,10 +190,9 @@ https://www.echartsjs.com/zh/api.html#echarts
 ![输入图片说明](images/image-qq%E7%BE%A4%E4%BA%8C%E7%BB%B4%E7%A0%81.png)
 
 
- ****九、  其他版本MES 或者 WMS介绍 ** 
+ ** ****八、  其他版本MES 或者 WMS介绍 ** ** 
 
-================================
-1、**另外一套MES演示链接 ***
+1、**其它MES演示链接 ***
 
 后端是java  ，采用开源 ruoyi-vue-pro框架
  ，
@@ -203,11 +202,13 @@ http://47.242.184.27:8071/
 
 
 
-2、==========**c#版本的MES系统 ***==========
+ **2、==**c#版本的MES系统 ***====** 
 
 前后分离 ，后端 net core ， 前端VUE，
-了解详情请加qq。
+了解详情请加qq。体验地址：
 
+http://47.242.184.27   ，
+admin/123456
 
 系统亮点：
 低代码设计平台，括自定义打印设计，Excel 模版导出，自定义桌面工作台，部分表单融入进度条步骤条，移动端设计精美合理，多平台支持，计精美看板，自定义实体扩展，表格拖拉拽，工序拖拽，数据字典支持SQL配置等诸多亮点。
@@ -225,13 +226,13 @@ https://www.bilibili.com/video/BV1gs4y1978N/?vd_source=1db635fc04060deb7c4dfe378
 
 ![输入图片说明](images/didaimaimage.png)
 
-3、===**基于java 诺依架构的WMS ，带微信小程序***====
+ **3、===**基于java 诺依架构的WMS ，带微信小程序***====** 
 
   https://gitee.com/imdreamer/wms2.git
 ![输入图片说明](images/WMS%E4%B8%BB%E5%9B%BE.png)
 ![输入图片说明](images/WMS%E5%B0%8F%E7%A8%8B%E5%BA%8F.png)
 
-4、===**基于C# WPF架构的MES+WMS**======
+ **4、===**基于C# WPF架构的MES+WMS**======** 
 
 源码链接：
 https://gitee.com/imdreamer/mes-wms2.git
