@@ -190,7 +190,7 @@ https://www.echartsjs.com/zh/api.html#echarts
 ![输入图片说明](images/image-qq%E7%BE%A4%E4%BA%8C%E7%BB%B4%E7%A0%81.png)
 
 
-**九、  其他版本MES 或者 WMS介绍 
+ ****九、  其他版本MES 或者 WMS介绍 ** 
 
 ================================
 1、**另外一套MES演示链接 ***
@@ -225,15 +225,19 @@ https://www.bilibili.com/video/BV1gs4y1978N/?vd_source=1db635fc04060deb7c4dfe378
 
 ![输入图片说明](images/didaimaimage.png)
 
-3、==========**基于java 诺依架构的WMS ，带微信小程序***==========
+3、===**基于java 诺依架构的WMS ，带微信小程序***====
 
   https://gitee.com/imdreamer/wms2.git
 ![输入图片说明](images/WMS%E4%B8%BB%E5%9B%BE.png)
 ![输入图片说明](images/WMS%E5%B0%8F%E7%A8%8B%E5%BA%8F.png)
 
-4、==========**基于C# WPF架构的MES+WMS**========
+4、===**基于C# WPF架构的MES+WMS**======
+
+源码链接：
 https://gitee.com/imdreamer/mes-wms2.git
+
 ![输入图片说明](images/C#WMS-%E4%B8%BB%E9%A1%B5%E9%9D%A2-%E8%AE%A2%E5%8D%95%E7%AE%A1%E7%90%86.png)
+
 
 
 
