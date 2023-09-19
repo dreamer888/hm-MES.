@@ -240,7 +240,7 @@ https://www.bilibili.com/video/BV1gs4y1978N/?vd_source=1db635fc04060deb7c4dfe378
 源码链接：
 https://gitee.com/imdreamer/mes-wms2.git
 
-![输入图片说明](images/C#-%E4%B8%BB%E9%A1%B5%E8%AE%A2%E5%8D%95%E7%AE%A1%E7%90%86.png)
+![输入图片说明](images/WMS-%E4%B8%BB%E9%A1%B5%E9%9D%A2-%E8%AE%A2%E5%8D%95%E7%AE%A1%E7%90%86.png)
 
 
 
