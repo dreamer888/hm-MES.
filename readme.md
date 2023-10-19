@@ -195,18 +195,19 @@ https://www.echartsjs.com/zh/api.html#echarts
 
  ** ****八、  其他版本MES 或者 WMS介绍 ** ** 
 
-1、**其它MES演示链接 ***
+1、**离散制造MES ***
 
 采用开源 ruoyi-vue-pro框架，后端是java 若依框架，前端VUE， 移动端uniapp。  
-体验网址：
-http://47.242.184.27:8071/
-admin/123456
 
-H5 
-http://47.242.184.27:8072/
+体验网址：
+
+http://47.242.184.27:8071 ,  admin/123456
+
+H5、APP或者PAD移动端 ,http://47.242.184.27:8072/
 
 
 ![输入图片说明](images/mes/%E7%94%9F%E4%BA%A7%E5%B7%A5%E5%8D%95.png)
+
 ![输入图片说明](images/mes/pad.png)
 
  **2、==**c#版本的MES系统 ***====** 
